@@ -2,9 +2,10 @@ from __future__ import annotations
 
 import importlib.util
 from pathlib import Path
-from typing import Dict, Iterable, List, cast, TYPE_CHECKING
+from typing import Any, Dict, Iterable, List, Set, cast, TYPE_CHECKING
 
 from glueous_plugin import Plugin
+from plugins import plugin_loading_order
 
 if TYPE_CHECKING:
     from .ReaderAccess import ReaderAccess
@@ -121,17 +122,35 @@ class PluginManager:
         return count
 
 
+    @staticmethod
+    def _call_plugin(plugin: Plugin, method_name: str, /, *args, **kwargs) -> Any:
+        """
+        安全地调用插件对象 `plugin` 的某个方法 `method_name`。
+        """
+        try:
+            return getattr(plugin, method_name)(*args, **kwargs)
+        except Exception as error:
+            print(f"{plugin.name}.{method_name}: {error.__class__.__name__}: {error}")
+        return None
+
+
     def loaded(self) -> None:
         """
-        加载所有插件。
+        按顺序加载所有插件。
         """
-        for plugin in self.plugins:
-            if plugin.able:
-                try:
-                    plugin.loaded()
-                except Exception as error:
-                    print(f"{plugin.name}.loaded: {error.__class__.__name__}: {error}")
+        plugin_names: Set[str] = set(self.name_mapping.keys())
 
+        for plugin_name in plugin_loading_order:
+            if plugin_name in plugin_names:
+                plugin = self[plugin_name]
+                if plugin.able:
+                    self._call_plugin(plugin, "loaded")
+                plugin_names.remove(plugin_name)
+
+        for plugin_name in plugin_names:
+            plugin = self[plugin_name]
+            if plugin.able:
+                self._call_plugin(plugin, "loaded")
 
 
     def run(self, hotkey: str) -> None:
@@ -140,10 +159,7 @@ class PluginManager:
         """
         plugin = self.hotkey_mapping.get(hotkey)
         if plugin and plugin.able:
-            try:
-                plugin.run()
-            except Exception as error:
-                print(f"{plugin.name}.run: {error.__class__.__name__}: {error}")
+            self._call_plugin(plugin, "run")
 
 
     def unloaded(self) -> None:
@@ -152,10 +168,7 @@ class PluginManager:
         """
         for plugin in self.plugins:
             if plugin.able:
-                try:
-                    plugin.unloaded()
-                except Exception as error:
-                    print(f"{plugin.name}.unloaded: {error.__class__.__name__}: {error}")
+                self._call_plugin(plugin, "unloaded")
 
 
     def bind_hotkeys(self) -> None:
