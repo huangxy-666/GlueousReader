@@ -17,7 +17,7 @@ class OpenPlugin(Plugin):
     description = "打开PDF或EPUB文件，快捷键: Ctrl+O"
 
     # 快捷键设置
-    hotkey = "<Control-o>"
+    hotkeys = ["<Control-o>"]
 
     def loaded(self) -> None:
         """

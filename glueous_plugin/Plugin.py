@@ -5,7 +5,7 @@ from __future__ import annotations
 
 from abc import ABC, abstractmethod
 
-from typing import TYPE_CHECKING
+from typing import List, TYPE_CHECKING
 from types import NoneType
 
 if TYPE_CHECKING:
@@ -84,9 +84,19 @@ class Plugin(ABC):
     @property
     def hotkey(self) -> str | None:
         """
-        触发快捷键，子类可以定义，格式同 Tkinter 库的热键触发格式。
+        返回默认的快捷键（ self.hotkeys 的第一个元素）。
         """
+        if self.hotkeys:
+            return self.hotkeys[0]
         return None
+
+
+    @property
+    def hotkeys(self) -> List[str]:
+        """
+        能够触发该插件的 run 方法的触发快捷键（可以有多个），子类可以定义，格式同 Tkinter 库的热键触发格式。
+        """
+        return []
 
 
     @property

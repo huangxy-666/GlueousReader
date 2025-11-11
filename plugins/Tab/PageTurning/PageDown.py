@@ -20,7 +20,7 @@ class PageDownPlugin(Plugin):
     description = "切换到下一页，快捷键: PageDown"
 
     # 快捷键设置
-    hotkey = "<Next>"  # 对应 PageDown 键
+    hotkeys = ["<Next>"]  # 对应 PageDown 键
 
 
     @staticmethod

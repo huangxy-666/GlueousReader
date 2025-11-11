@@ -52,7 +52,7 @@ class PluginManager:
 
     def __str__(self) -> str:
         return self.__class__.__name__ + str({
-            plugin.name: plugin.hotkey
+            plugin.name: plugin.hotkeys
             for plugin in self.plugins
         })
 
@@ -63,8 +63,8 @@ class PluginManager:
         """
         self.plugins.append(plugin)
         self.name_mapping[plugin.name] = plugin
-        if plugin.hotkey:
-            self.hotkey_mapping[plugin.hotkey] = plugin
+        for hotkey in plugin.hotkeys:
+            self.hotkey_mapping[hotkey] = plugin
 
 
     def load_plugins_from_file(self, plugin_file: Path) -> int:

@@ -15,7 +15,7 @@ class ClosePlugin(Plugin):
     description = "关闭当前标签页，快捷键: Ctrl+W"
 
     # 快捷键设置
-    hotkey = "<Control-w>"
+    hotkeys = ["<Control-w>"]
 
     def loaded(self) -> None:
         """

@@ -18,7 +18,7 @@ class ZoomOutPlugin(Plugin):
     description = "缩小当前页面，快捷键: Ctrl+-"
 
     # 快捷键设置
-    hotkey = "<Control-minus>"
+    hotkeys = ["<Control-minus>"]
 
 
     @override

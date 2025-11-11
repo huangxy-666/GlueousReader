@@ -70,10 +70,22 @@
 [e06aeceab3b1c5e979ca8376dcda341371b09b](.\.git\objects\01\e06aeceab3b1c5e979ca8376dcda341371b09b) : 
 
 
+[dd8ddc6cbb921cefd45f6012fac04cf9f34811](.\.git\objects\0c\dd8ddc6cbb921cefd45f6012fac04cf9f34811) : 
+
+
 [3fa8ef9e8e814ab294bd8df01545fc543b038d](.\.git\objects\0e\3fa8ef9e8e814ab294bd8df01545fc543b038d) : 
 
 
+[43bdda51913f57d20e3fbcad46085123260d9f](.\.git\objects\0e\43bdda51913f57d20e3fbcad46085123260d9f) : 
+
+
+[37e6dbbeaa96f849a67db0e64a35a3a502d2cb](.\.git\objects\0f\37e6dbbeaa96f849a67db0e64a35a3a502d2cb) : 
+
+
 [f4e740f48a74f954a6a98b29e729c8ccac23b2](.\.git\objects\13\f4e740f48a74f954a6a98b29e729c8ccac23b2) : 
+
+
+[c0f47b573ddf5e80a5ea128c5f90afb312dab3](.\.git\objects\22\c0f47b573ddf5e80a5ea128c5f90afb312dab3) : 
 
 
 [3561eced8a0da7461cc525649d2807e9b5e741](.\.git\objects\25\3561eced8a0da7461cc525649d2807e9b5e741) : 
@@ -82,10 +94,22 @@
 [560e297267e65f3616dfbe7a94f83b93408d28](.\.git\objects\27\560e297267e65f3616dfbe7a94f83b93408d28) : 
 
 
+[4c731e85348b148d5058dc5fbae030332e54ef](.\.git\objects\2a\4c731e85348b148d5058dc5fbae030332e54ef) : 
+
+
+[55fd6d3df611ee49467b048be222590e192721](.\.git\objects\2b\55fd6d3df611ee49467b048be222590e192721) : 
+
+
 [f19010f2bda6a8f4e9f7553268398b01931844](.\.git\objects\2b\f19010f2bda6a8f4e9f7553268398b01931844) : 
 
 
 [aabb3df5490b6a9ec882d85a4033214354e7bb](.\.git\objects\2d\aabb3df5490b6a9ec882d85a4033214354e7bb) : 
+
+
+[09499e6dfac54b6ac4db3fbaabe402be26167f](.\.git\objects\31\09499e6dfac54b6ac4db3fbaabe402be26167f) : 
+
+
+[2766671418bac7abf74dd25ea901fd320ba3b5](.\.git\objects\32\2766671418bac7abf74dd25ea901fd320ba3b5) : 
 
 
 [31df0883297ac55fb2033d8f201f2ea2050bd2](.\.git\objects\35\31df0883297ac55fb2033d8f201f2ea2050bd2) : 
@@ -94,22 +118,61 @@
 [6f98d417a54ae0b3cd04f9ffd3baccbec03f60](.\.git\objects\38\6f98d417a54ae0b3cd04f9ffd3baccbec03f60) : 
 
 
+[51a2d45e16956d9964fe04bcc8cba86eaa1c9b](.\.git\objects\39\51a2d45e16956d9964fe04bcc8cba86eaa1c9b) : 
+
+
 [3937e3fb4b2e0f29fa1c1ccdf5cfd6ade64993](.\.git\objects\3b\3937e3fb4b2e0f29fa1c1ccdf5cfd6ade64993) : 
 
 
 [6e9dc0d3f85b20020c3fdc28e4888342027562](.\.git\objects\3d\6e9dc0d3f85b20020c3fdc28e4888342027562) : 
 
 
+[78c30bdd75a2ac910ac643e8d5580e9d66af42](.\.git\objects\3e\78c30bdd75a2ac910ac643e8d5580e9d66af42) : 
+
+
 [07a27aad91bdf6a3c38381df82553a7671b738](.\.git\objects\41\07a27aad91bdf6a3c38381df82553a7671b738) : 
+
+
+[dc2d52fbfd97abc14a284f173bffedc26aedb1](.\.git\objects\42\dc2d52fbfd97abc14a284f173bffedc26aedb1) : 
+
+
+[06dd5d0c1afe6aa4bff15f6470b21fa0b2ea14](.\.git\objects\47\06dd5d0c1afe6aa4bff15f6470b21fa0b2ea14) : 
+
+
+[cd03e9233a801c6f447fbbcec950d4ab29741f](.\.git\objects\4e\cd03e9233a801c6f447fbbcec950d4ab29741f) : 
 
 
 [66dd2c3134e62fe9bcbd18d5306180033e849a](.\.git\objects\59\66dd2c3134e62fe9bcbd18d5306180033e849a) : 
 
 
+[14357fdeded4d2dfbcd4e62f9643a563f66b7d](.\.git\objects\5b\14357fdeded4d2dfbcd4e62f9643a563f66b7d) : 
+
+
+[e95746b572b3691386da3836dabf5ea2cb0724](.\.git\objects\60\e95746b572b3691386da3836dabf5ea2cb0724) : 
+
+
 [839c102ae3353eab435d6b746ff6f03867359c](.\.git\objects\68\839c102ae3353eab435d6b746ff6f03867359c) : 
 
 
+[3bcc960962cea8c5a4f6a8a4f1a58988624aa0](.\.git\objects\6b\3bcc960962cea8c5a4f6a8a4f1a58988624aa0) : 
+
+
 [feb2d88eda63e560cf5508a3a61b9c58dfa51d](.\.git\objects\6e\feb2d88eda63e560cf5508a3a61b9c58dfa51d) : 
+
+
+[a15c0d2822db79f4b9a46a214e95baf897125d](.\.git\objects\6f\a15c0d2822db79f4b9a46a214e95baf897125d) : 
+
+
+[54e7e0a901cc9f25afe6e01ab6fa377149d625](.\.git\objects\71\54e7e0a901cc9f25afe6e01ab6fa377149d625) : 
+
+
+[eba298d6b690f3805c1df06cb64268bff505fd](.\.git\objects\73\eba298d6b690f3805c1df06cb64268bff505fd) : 
+
+
+[297d638065e3e2fc0e5637ef6bffa0e2c0af15](.\.git\objects\75\297d638065e3e2fc0e5637ef6bffa0e2c0af15) : 
+
+
+[3e30f7dc4c38777e5a60846867340a1a83f997](.\.git\objects\77\3e30f7dc4c38777e5a60846867340a1a83f997) : 
 
 
 [5332a94cdbd11f26d08313cc09de750052d445](.\.git\objects\7c\5332a94cdbd11f26d08313cc09de750052d445) : 
@@ -124,16 +187,37 @@
 [625e4ebb116c25ffde7608e543d089afaac561](.\.git\objects\83\625e4ebb116c25ffde7608e543d089afaac561) : 
 
 
+[a6806c3c1ac4e1138cea1302042c070b66305d](.\.git\objects\8b\a6806c3c1ac4e1138cea1302042c070b66305d) : 
+
+
+[acc4c2e07df2a1b513d4360bb6b514bd01ef13](.\.git\objects\8d\acc4c2e07df2a1b513d4360bb6b514bd01ef13) : 
+
+
 [c7ff367d097d64b5a7f819eb7c21db709020da](.\.git\objects\8e\c7ff367d097d64b5a7f819eb7c21db709020da) : 
+
+
+[fe634e3a981bfb3bfd140e722202631313ff98](.\.git\objects\8f\fe634e3a981bfb3bfd140e722202631313ff98) : 
 
 
 [215fd0ca5112813318ee978f7722b6911d11c7](.\.git\objects\95\215fd0ca5112813318ee978f7722b6911d11c7) : 
 
 
+[7ddc951744f5c1fcf9f5ce850188d8f339e32e](.\.git\objects\97\7ddc951744f5c1fcf9f5ce850188d8f339e32e) : 
+
+
 [139b6d7bd400c4d67ca0d5ed3a5f1cb4b940b5](.\.git\objects\a2\139b6d7bd400c4d67ca0d5ed3a5f1cb4b940b5) : 
 
 
+[57932133ce3b2b3ef69768ad26d9bd00b92e25](.\.git\objects\ab\57932133ce3b2b3ef69768ad26d9bd00b92e25) : 
+
+
+[a1a44811ad13972b7a098b4856baaa135c2f54](.\.git\objects\ac\a1a44811ad13972b7a098b4856baaa135c2f54) : 
+
+
 [f263076efb592ead506b03367643e7150f727c](.\.git\objects\af\f263076efb592ead506b03367643e7150f727c) : 
+
+
+[d8dde1fec93b94b7034edc669ef926263b027e](.\.git\objects\ba\d8dde1fec93b94b7034edc669ef926263b027e) : 
 
 
 [a64564f20eae94880cbc1361d3ae129c9c817c](.\.git\objects\bf\a64564f20eae94880cbc1361d3ae129c9c817c) : 
@@ -148,13 +232,49 @@
 [1b0d3940a91ae83f314d47bc93d307519372be](.\.git\objects\c7\1b0d3940a91ae83f314d47bc93d307519372be) : 
 
 
+[04c4ab33f74bd1a037688494f18874fbe27cac](.\.git\objects\cc\04c4ab33f74bd1a037688494f18874fbe27cac) : 
+
+
+[125162d2944c7f4a162d21f91b78c6d4b14ee9](.\.git\objects\cc\125162d2944c7f4a162d21f91b78c6d4b14ee9) : 
+
+
 [8848b016fb37aeb8a38370385036fdabbcfd5b](.\.git\objects\cf\8848b016fb37aeb8a38370385036fdabbcfd5b) : 
+
+
+[aaeb5afee5e75dd804b5e2ec29bc50b11ca7ae](.\.git\objects\d3\aaeb5afee5e75dd804b5e2ec29bc50b11ca7ae) : 
+
+
+[81e92008c68a3a1c268b90698140a000844ef9](.\.git\objects\d8\81e92008c68a3a1c268b90698140a000844ef9) : 
+
+
+[1b08ac444da23499e869a6468d80ed9b446379](.\.git\objects\dc\1b08ac444da23499e869a6468d80ed9b446379) : 
 
 
 [bbfbf73016d1a3efbcb401f9b7dc501374d7c2](.\.git\objects\e0\bbfbf73016d1a3efbcb401f9b7dc501374d7c2) : 
 
 
+[89c77c0930b341b76c616f34f323af1e71752b](.\.git\objects\e4\89c77c0930b341b76c616f34f323af1e71752b) : 
+
+
+[a6d8c4ad3c63fae3d0c38e9d41c336b9a9bdfb](.\.git\objects\e5\a6d8c4ad3c63fae3d0c38e9d41c336b9a9bdfb) : 
+
+
 [9de29bb2d1d6434b8b29ae775ad8c2e48c5391](.\.git\objects\e6\9de29bb2d1d6434b8b29ae775ad8c2e48c5391) : 
+
+
+[cff0b77155bff29fa44b0ce1e868a00646708d](.\.git\objects\e6\cff0b77155bff29fa44b0ce1e868a00646708d) : 
+
+
+[2f7a8ed22e148378d9d39a66ed68deb55e5729](.\.git\objects\e8\2f7a8ed22e148378d9d39a66ed68deb55e5729) : 
+
+
+[98b124f61da5a5d7dfcaeccf98225149914e97](.\.git\objects\e9\98b124f61da5a5d7dfcaeccf98225149914e97) : 
+
+
+[3ad2eabfc5088dead8fb5feff455ba426a1bc9](.\.git\objects\ec\3ad2eabfc5088dead8fb5feff455ba426a1bc9) : 
+
+
+[646d07ef71eabca19609e5e0e0e55521d627cf](.\.git\objects\ed\646d07ef71eabca19609e5e0e0e55521d627cf) : 
 
 
 [e9252af62f13c91bac72eff511a6c84c76f9a4](.\.git\objects\ee\e9252af62f13c91bac72eff511a6c84c76f9a4) : 
@@ -164,6 +284,9 @@
 
 
 [00697c357a722f8487d576e62f1aee0fc59338](.\.git\objects\f2\00697c357a722f8487d576e62f1aee0fc59338) : 
+
+
+[43e615f2ed7bd99f3ea077986ffd28daf23ff8](.\.git\objects\f6\43e615f2ed7bd99f3ea077986ffd28daf23ff8) : 
 
 
 [e1e38ed653cc69d76bd57c379ff9dcdde634fb](.\.git\objects\f9\e1e38ed653cc69d76bd57c379ff9dcdde634fb) : 
@@ -187,6 +310,9 @@
 [.tags_sorted_by_file](.\.tags_sorted_by_file) : 
 
 
+[data.json](.\config\data.json) : 
+
+
 [settings.py](.\config\settings.py) : 
 ``````python
 SETTINGS = {
@@ -202,10 +328,13 @@ SETTINGS = {
     "data_path": "./config/data.json",
 
     # 执行周期性函数的时间间隔（单位：毫秒）
-    "frequency": 1000,
+    "frequency": 500,
 
     # 写入/读取文本文件时的默认编码
     "encoding": "utf-8",
+
+    # 缩放等级
+    "zoom_levels": [8.33, 12.5, 18, 25, 33.33, 50, 66.67, 75, 100, 125, 150, 200, 300, 400, 600, 800, 1000, 1200, 1600, 2000, 2400, 3200, 4800, 6400],
 }
 
 ``````
@@ -281,7 +410,7 @@ class PluginManager:
 
     def __str__(self) -> str:
         return self.__class__.__name__ + str({
-            plugin.name: plugin.hotkey
+            plugin.name: plugin.hotkeys
             for plugin in self.plugins
         })
 
@@ -292,8 +421,8 @@ class PluginManager:
         """
         self.plugins.append(plugin)
         self.name_mapping[plugin.name] = plugin
-        if plugin.hotkey:
-            self.hotkey_mapping[plugin.hotkey] = plugin
+        for hotkey in plugin.hotkeys:
+            self.hotkey_mapping[hotkey] = plugin
 
 
     def load_plugins_from_file(self, plugin_file: Path) -> int:
@@ -662,6 +791,7 @@ class ReaderAccess:
                 current_menu["children"].append(new_menu)
                 current_menu = new_menu
 
+        self.update_menubar()
         return current_menu
 
 
@@ -673,6 +803,7 @@ class ReaderAccess:
         """
         menu = self.add_menu(path)
         menu["children"].append({"type": "seperator"})
+        self.update_menubar()
 
 
     def add_menu_command(self, path: Iterable[str], **kwargs: Dict[str, Any]) -> None:
@@ -685,6 +816,7 @@ class ReaderAccess:
         """
         menu = self.add_menu(path)
         menu["children"].append({"type": "command", **kwargs})
+        self.update_menubar()
 
 
     def update_menubar(self) -> None:
@@ -696,9 +828,9 @@ class ReaderAccess:
 
     def add_tool(
         self,
-        Widget: Type, *args,
+        Widget: Type, *,
+        args: List[Any] = None, kwargs: Dict[str, Any] = None,
         side: str = tk.LEFT, padx: int = 5, pady: int = 5,
-        **kwargs
     ) -> tk.Widget:
         """
         添加一个工具。
@@ -708,6 +840,10 @@ class ReaderAccess:
 
         返回创建的组件实例。
         """
+        if args is None:
+            args = []
+        if kwargs is None:
+            kwargs = {}
         # 创建组件实例
         widget_instance = Widget(self._reader.toolbar, *args, **kwargs)
         # 添加到工具栏
@@ -780,7 +916,7 @@ from __future__ import annotations
 
 from abc import ABC, abstractmethod
 
-from typing import TYPE_CHECKING
+from typing import List, TYPE_CHECKING
 from types import NoneType
 
 if TYPE_CHECKING:
@@ -859,9 +995,19 @@ class Plugin(ABC):
     @property
     def hotkey(self) -> str | None:
         """
-        触发快捷键，子类可以定义，格式同 Tkinter 库的热键触发格式。
+        返回默认的快捷键（ self.hotkeys 的第一个元素）。
         """
+        if self.hotkeys:
+            return self.hotkeys[0]
         return None
+
+
+    @property
+    def hotkeys(self) -> List[str]:
+        """
+        能够触发该插件的 run 方法的触发快捷键（可以有多个），子类可以定义，格式同 Tkinter 库的热键触发格式。
+        """
+        return []
 
 
     @property
@@ -1914,7 +2060,7 @@ if __name__ == "__main__":
 
 
 
-[Close.py](.\plugins\File\Close.py) : 
+[Close.py](.\plugins\Tab\File\Close.py) : 
 ``````python
 """
 关闭当前标签页。
@@ -1933,7 +2079,7 @@ class ClosePlugin(Plugin):
     description = "关闭当前标签页，快捷键: Ctrl+W"
 
     # 快捷键设置
-    hotkey = "<Control-w>"
+    hotkeys = ["<Control-w>"]
 
     def loaded(self) -> None:
         """
@@ -1945,7 +2091,6 @@ class ClosePlugin(Plugin):
             command = self.run,
             accelerator = self.hotkey
         )
-        self.context.update_menubar()
 
 
     def run(self) -> None:
@@ -1967,7 +2112,7 @@ class ClosePlugin(Plugin):
 
 
 
-[Open.py](.\plugins\File\Open.py) : 
+[Open.py](.\plugins\Tab\File\Open.py) : 
 ``````python
 """
 用于打开文件的插件。
@@ -1988,7 +2133,7 @@ class OpenPlugin(Plugin):
     description = "打开PDF或EPUB文件，快捷键: Ctrl+O"
 
     # 快捷键设置
-    hotkey = "<Control-o>"
+    hotkeys = ["<Control-o>"]
 
     def loaded(self) -> None:
         """
@@ -2000,7 +2145,6 @@ class OpenPlugin(Plugin):
             command = self.run,
             accelerator = self.hotkey
         )
-        self.context.update_menubar()
 
 
     def run(self) -> None:
@@ -2029,6 +2173,8 @@ class OpenPlugin(Plugin):
 
         # 创建新标签页
         self.context.create_tab(file_path)
+        self.context.update_page_number()
+        self.context.update_page_turning_button()
 
 
     def unloaded(self) -> None:
@@ -2038,218 +2184,10 @@ class OpenPlugin(Plugin):
 
 
 
-[Close.cpython-313.pyc](.\plugins\File\__pycache__\Close.cpython-313.pyc) : 
+[Close.cpython-313.pyc](.\plugins\Tab\File\__pycache__\Close.cpython-313.pyc) : 
 
 
-[Open.cpython-313.pyc](.\plugins\File\__pycache__\Open.cpython-313.pyc) : 
-
-
-[PageDown.py](.\plugins\PageTurning\PageDown.py) : 
-``````python
-"""
-下一页。
-"""
-
-from tkinter import ttk
-from glueous_plugin import Plugin
-
-
-class PageDownPlugin(Plugin):
-    """
-    下一页插件：允许用户通过快捷键或菜单项切换到下一页。
-    """
-
-    # 插件信息
-    name = "PageDownPlugin"
-    description = "切换到下一页，快捷键: PageDown"
-
-    # 快捷键设置
-    hotkey = "<Next>"  # 对应 PageDown 键
-
-
-    def loaded(self) -> None:
-        """
-        注册菜单项、快捷键、“下一页”按钮。
-        """
-        # 注册菜单项、快捷键
-        self.context.add_menu_command(
-            path=["前往"],
-            label="下一页",
-            command=self.run,
-            accelerator=self.hotkey
-        )
-        self.context.update_menubar()
-
-        # “下一页”按钮
-        next_btn = self.context.add_tool(ttk.Button, text="下一页", command = self.run)
-
-        # 将这个按钮组件添加到 context 中，以便其他插件访问
-        self.context.get_next_button = lambda: next_btn
-
-
-    def run(self) -> None:
-        """
-        执行下一页操作。
-        """
-        current_tab = self.context.get_current_tab()
-        if current_tab is None:
-            return
-
-        # 切换到下一页
-        if current_tab.current_page < current_tab.total_pages - 1:
-            current_tab.current_page += 1
-            current_tab.show_page()
-            self.context.update_page_number()
-        else:
-            print("已经是最后一页")
-
-
-    def unloaded(self) -> None:
-        return
-
-``````
-
-
-
-[PageNo.py](.\plugins\PageTurning\PageNo.py) : 
-``````python
-"""
-显示当前页码。
-"""
-
-from tkinter import ttk
-from glueous_plugin import Plugin
-
-
-class PageNoPlugin(Plugin):
-    """
-    页码显示插件：在状态栏显示当前页码和总页数。
-    """
-
-    # 插件信息
-    name = "PageNoPlugin"
-    description = "在状态栏显示当前页码和总页数"
-
-
-    def loaded(self) -> None:
-        """
-        初始化页码标签并添加到状态栏。
-        """
-        # 创建页码显示标签
-        self.page_label = self.context.add_tool(
-            ttk.Label,
-            padx = 10,
-            text = "0/0",
-        )
-
-        # 绑定标签页切换事件，以更新页码显示
-        self.context.bind_notebook("<<NotebookTabChanged>>", self.update_page_number)
-
-        # 方便其他插件调用
-        self.context.update_page_number = self.update_page_number
-
-
-    def update_page_number(self, event = None) -> None:
-        """
-        更新页码显示。
-        """
-        current_tab = self.context.get_current_tab()
-        if current_tab and current_tab.total_pages > 0:
-            self.page_label.config(
-                text=f"{current_tab.current_page + 1}/{current_tab.total_pages}"
-            )
-        else:
-            self.page_label.config(text = "0/0")
-
-
-    def run(self) -> None:
-        """
-        插件执行方法（此处无需特殊处理）。
-        """
-        pass
-
-
-    def unloaded(self) -> None:
-        pass
-
-``````
-
-
-
-[PageUp.py](.\plugins\PageTurning\PageUp.py) : 
-``````python
-"""
-上一页。
-"""
-
-from tkinter import ttk
-from glueous_plugin import Plugin
-
-
-class PageUpPlugin(Plugin):
-    """
-    上一页插件：允许用户通过快捷键或菜单项切换到上一页。
-    """
-
-    # 插件信息
-    name = "PageUpPlugin"
-    description = "切换到上一页，快捷键: PageUp"
-
-    # 快捷键设置
-    hotkey = "<Prior>"  # 对应 PageUp 键
-
-
-    def loaded(self) -> None:
-        """
-        注册菜单项、快捷键、“上一页”按钮。
-        """
-        # 注册菜单项、快捷键
-        self.context.add_menu_command(
-            path=["前往"],
-            label="上一页",
-            command=self.run,
-            accelerator=self.hotkey
-        )
-        self.context.update_menubar()
-
-        # “上一页”按钮
-        prev_btn = self.context.add_tool(ttk.Button, text="上一页", command = self.run)
-
-        # 将这个按钮组件添加到 context 中，以便其他插件访问
-        self.context.get_prev_button = lambda: prev_btn
-
-
-    def run(self) -> None:
-        """
-        执行上一页操作。
-        """
-        current_tab = self.context.get_current_tab()
-        if current_tab is None:
-            return
-
-        # 切换到上一页
-        if current_tab.current_page > 0:
-            current_tab.current_page -= 1
-            current_tab.show_page()
-            self.context.update_page_number()
-        else:
-            print("已经是第一页")
-
-
-    def unloaded(self) -> None:
-        return
-
-``````
-
-
-
-[PageDown.cpython-313.pyc](.\plugins\PageTurning\__pycache__\PageDown.cpython-313.pyc) : 
-
-
-[PageNo.cpython-313.pyc](.\plugins\PageTurning\__pycache__\PageNo.cpython-313.pyc) : 
-
-
-[PageUp.cpython-313.pyc](.\plugins\PageTurning\__pycache__\PageUp.cpython-313.pyc) : 
+[Open.cpython-313.pyc](.\plugins\Tab\File\__pycache__\Open.cpython-313.pyc) : 
 
 
 [FileState.py](.\plugins\Tab\FileState.py) : 
@@ -2517,6 +2455,341 @@ class FileState:
 
 
 
+[PageDown.py](.\plugins\Tab\PageTurning\PageDown.py) : 
+``````python
+"""
+下一页。
+"""
+
+from tkinter import ttk
+from typing import override
+from types import MethodType
+
+from glueous import ReaderAccess
+from glueous_plugin import Plugin
+
+
+class PageDownPlugin(Plugin):
+    """
+    下一页插件：允许用户通过快捷键或菜单项切换到下一页。
+    """
+
+    # 插件信息
+    name = "PageDownPlugin"
+    description = "切换到下一页，快捷键: PageDown"
+
+    # 快捷键设置
+    hotkeys = ["<Next>"]  # 对应 PageDown 键
+
+
+    @staticmethod
+    def update_page_turning_button(access: ReaderAccess, event = None) -> None:
+        """
+        更新 prev_button 和 next_button 的启用/禁用状态。
+        """
+        # 获取“上一页”和“下一页”按钮
+        prev_button = access.get_prev_button()
+        next_button = access.get_next_button()
+
+        current_tab = access.get_current_tab()
+        if current_tab is None:
+            prev_button.config(state = "disabled")
+            next_button.config(state = "disabled")
+            return
+
+        # 检查当前页码并更新按钮状态
+        if current_tab.page_no <= 0:
+            prev_button.config(state = "disabled")
+        else:
+            prev_button.config(state = "normal")
+
+        if current_tab.page_no >= current_tab.total_pages - 1:
+            next_button.config(state = "disabled")
+        else:
+            next_button.config(state = "normal")
+
+
+    @override
+    def loaded(self) -> None:
+        """
+        注册菜单项、快捷键、“下一页”按钮。
+        """
+        # 注册菜单项、快捷键
+        self.context.add_menu_command(
+            path = ["前往"],
+            label = "下一页",
+            command = self.run,
+            accelerator = self.hotkey
+        )
+
+        # “下一页”按钮
+        next_btn = self.context.add_tool(
+            ttk.Button,
+            kwargs = {
+                "text": "→",
+                "command": self.run,
+                "width": 3,
+            }
+        )
+
+        # 将这个按钮组件添加到 context 中，以便其他插件访问
+        self.context.get_next_button = lambda: next_btn
+        self.context.update_page_turning_button = MethodType(self.update_page_turning_button, self.context)
+
+        # 绑定标签页切换事件，以更新按钮显示
+        self.context.bind_notebook("<<NotebookTabChanged>>", self.context.update_page_turning_button)
+
+
+    @override
+    def run(self) -> None:
+        """
+        执行下一页操作。
+        """
+        current_tab = self.context.get_current_tab()
+        if current_tab is None:
+            return
+
+        # 切换到下一页
+        if current_tab.page_no < current_tab.total_pages - 1:
+            current_tab.page_no += 1
+            current_tab.show_page()
+            self.context.update_page_number()
+            self.context.update_page_turning_button()
+        else:
+            print("已经是最后一页")
+
+
+    @override
+    def unloaded(self) -> None:
+        pass
+
+``````
+
+
+
+[PageNo.py](.\plugins\Tab\PageTurning\PageNo.py) : 
+``````python
+"""
+显示当前页码。
+"""
+
+from tkinter import ttk
+from typing import override
+
+from glueous_plugin import Plugin
+
+
+class PageNoPlugin(Plugin):
+    """
+    页码显示插件：在状态栏显示当前页码和总页数。
+    """
+
+    # 插件信息
+    name = "PageNoPlugin"
+    description = "在状态栏显示当前页码和总页数"
+
+
+    @override
+    def loaded(self) -> None:
+        """
+        初始化页码标签并添加到状态栏。
+        """
+        # 创建页码显示标签
+        self.page_label = self.context.add_tool(
+            ttk.Label,
+            padx = 10,
+            kwargs = {
+                "text": "0/0",
+            }
+        )
+
+        # 绑定标签页切换事件，以更新页码显示
+        self.context.bind_notebook("<<NotebookTabChanged>>", self.update_page_number)
+
+        # 方便其他插件调用
+        self.context.update_page_number = self.update_page_number
+
+
+    def update_page_number(self, event = None) -> None:
+        """
+        更新页码显示。
+        """
+        current_tab = self.context.get_current_tab()
+        if current_tab and current_tab.total_pages > 0:
+            self.page_label.config(
+                text=f"{current_tab.page_no + 1}/{current_tab.total_pages}"
+            )
+        else:
+            self.page_label.config(text = "0/0")
+
+
+    @override
+    def run(self) -> None:
+        """
+        插件执行方法（此处无需特殊处理）。
+        """
+        pass
+
+
+    @override
+    def unloaded(self) -> None:
+        pass
+
+``````
+
+
+
+[PageUp.py](.\plugins\Tab\PageTurning\PageUp.py) : 
+``````python
+"""
+上一页。
+"""
+
+from tkinter import ttk
+from typing import override
+
+from glueous_plugin import Plugin
+
+
+class PageUpPlugin(Plugin):
+    """
+    上一页插件：允许用户通过快捷键或菜单项切换到上一页。
+    """
+
+    # 插件信息
+    name = "PageUpPlugin"
+    description = "切换到上一页，快捷键: PageUp"
+
+    # 快捷键设置
+    hotkeys = ["<Prior>"]  # 对应 PageUp 键
+
+
+    @override
+    def loaded(self) -> None:
+        """
+        注册菜单项、快捷键、“上一页”按钮。
+        """
+        # 注册菜单项、快捷键
+        self.context.add_menu_command(
+            path = ["前往"],
+            label = "上一页",
+            command = self.run,
+            accelerator = self.hotkey
+        )
+
+        # “上一页”按钮
+        prev_btn = self.context.add_tool(
+            ttk.Button,
+            kwargs = {
+                "text": "←",
+                "command": self.run,
+                "width": 3,
+            }
+        )
+
+        # 将这个按钮组件添加到 context 中，以便其他插件访问
+        self.context.get_prev_button = lambda: prev_btn
+
+
+    @override
+    def run(self) -> None:
+        """
+        执行上一页操作。
+        """
+        current_tab = self.context.get_current_tab()
+        if current_tab is None:
+            return
+
+        # 切换到上一页
+        if current_tab.page_no > 0:
+            current_tab.page_no -= 1
+            current_tab.show_page()
+            self.context.update_page_number()
+            self.context.update_page_turning_button()
+        else:
+            print("已经是第一页")
+
+
+    @override
+    def unloaded(self) -> None:
+        pass
+
+``````
+
+
+
+[PageDown.cpython-313.pyc](.\plugins\Tab\PageTurning\__pycache__\PageDown.cpython-313.pyc) : 
+
+
+[PageNo.cpython-313.pyc](.\plugins\Tab\PageTurning\__pycache__\PageNo.cpython-313.pyc) : 
+
+
+[PageUp.cpython-313.pyc](.\plugins\Tab\PageTurning\__pycache__\PageUp.cpython-313.pyc) : 
+
+
+[ScrollUp.py](.\plugins\Tab\Scroll\ScrollUp.py) : 
+``````python
+"""
+向上滚动。
+"""
+
+from tkinter import ttk
+from typing import override
+
+from glueous_plugin import Plugin
+
+
+class ScrollUpPlugin(Plugin):
+    """
+    向上滚动插件：允许用户通过快捷键或菜单项向上滚动页面。
+    """
+
+    # 插件信息
+    name = "ScrollUpPlugin"
+    description = "向上滚动页面，快捷键: Up"
+
+    # 快捷键设置
+    hotkeys = ["<Up>"]
+
+
+    @override
+    def loaded(self) -> None:
+        """
+        注册菜单项、快捷键。
+        """
+        # 注册菜单项、快捷键
+        self.context.add_menu_command(
+            path = ["前往"],
+            label = "向上滚动",
+            command = self.run,
+            accelerator = self.hotkey
+        )
+
+
+    @override
+    def run(self) -> None:
+        """
+        执行向上滚动操作。
+        """
+        current_tab = self.context.get_current_tab()
+        if current_tab is None:
+            return
+
+        # 向上滚动画布
+        current_tab.canvas.yview_scroll(-1, "units")
+
+
+    @override
+    def unloaded(self) -> None:
+        pass
+
+``````
+
+
+
+[ScrollUp.cpython-313.pyc](.\plugins\Tab\Scroll\__pycache__\ScrollUp.cpython-313.pyc) : 
+
+
 [Tab.py](.\plugins\Tab\Tab.py) : 
 ``````python
 from __future__ import annotations
@@ -2530,7 +2803,7 @@ from types import MethodType
 from PIL import Image, ImageTk
 import fitz  # PyMuPDF
 
-from .FileState import FileState
+from plugins.Tab.FileState import FileState
 
 from glueous import ReaderAccess
 from glueous_plugin import Plugin
@@ -2562,22 +2835,22 @@ class Tab:
             self.state = FileState(file_path).to_json()
             file_states.insert(0, self.state)
 
-
-        self.doc = None  # PyMuPDF文档对象
-        self.current_page = 0
-        self.total_pages = 0
-        self.zoom = 1.0
-
         # 创建标签页内的UI组件
         self.create_widgets()
+
+        # 打开文件
+        self.doc = None  # PyMuPDF文档对象
+        self.total_pages = 0
+        self.open()
 
 
     def __getattr__(self, attr_name: str) -> Any:
         """
         返回此对象的属性。如果在此对象本身上找不到，则再在 self.state 里找。
         """
-        if attr_name in self.state:
-            return self.state[attr_name]
+        state = self.__dict__.get('state')
+        if state is not None and attr_name in state:
+            return state[attr_name]
         raise AttributeError(f"'{self.__class__.__name__}' object has no attribute '{attr_name}'")
 
 
@@ -2585,15 +2858,24 @@ class Tab:
         """
         设置此对象的属性。如果 attr_name 在 __annotations__ 中，则设置到 self.state 中。
         """
+        # 特殊处理 state 属性本身的设置
+        if attr_name == 'state':
+            super().__setattr__(attr_name, value)
+            return
+
         # 获取类的 annotations（即类型提示）
         annotations = getattr(self.__class__, '__annotations__', {})
-        
-        # 如果 attr_name 是类中声明的字段（包括继承的），则直接设置到对象上
-        if (attr_name in annotations) or (attr_name in self.__dict__) or (attr_name not in self.state):
+
+        # 安全地获取 state
+        state = self.__dict__.get('state')
+
+        # 如果 attr_name 是类中声明的字段，或 state 还未初始化，或属性不在 state 中
+        # 则直接设置到对象上
+        if (attr_name in annotations) or (state is None) or (attr_name not in state):
             super().__setattr__(attr_name, value)
         else:
             # 设置到 state 中
-            self.state[attr_name] = value
+            state[attr_name] = value
 
 
     def create_widgets(self):
@@ -2637,8 +2919,6 @@ class Tab:
 
             self.doc = fitz.open(self.file_path)
             self.total_pages = len(self.doc)
-            self.current_page = 0
-            self.zoom = 1.0
 
             # 刷新显示
             self.show_page()
@@ -2647,6 +2927,9 @@ class Tab:
             tab_title = os.path.basename(self.file_path)
             self.notebook.tab(self.frame, text = tab_title)
 
+
+            # 计数打开次数
+            self.state["open_count"] += 1
             return True
         except Exception as e:
             messagebox.showerror("错误", f"打开失败: {str(e)}")
@@ -2658,19 +2941,20 @@ class Tab:
         """
         渲染当前页。
         """
-        if not self.doc or not (0 <= self.current_page < self.total_pages):
+        if not self.doc or not (0 <= self.page_no < self.total_pages):
             return
 
         # 清空画布和缓存
         self.canvas.delete("all")
 
         # 渲染页面图像
-        page = self.doc[self.current_page]
-        mat = fitz.Matrix(self.zoom, self.zoom)
+        page = self.doc[self.page_no]
+        mat = fitz.Matrix(self.zoom / 100, self.zoom / 100)
         pix = page.get_pixmap(matrix=mat)
         img = Image.frombytes("RGB", [pix.width, pix.height], pix.samples)
         self.tk_img = ImageTk.PhotoImage(image=img)
-        self.canvas.create_image(0, 0, anchor=tk.NW, image=self.tk_img)
+        ####
+        self.canvas.create_image(self.scroll_pos[0], self.scroll_pos[1], anchor=tk.NW, image=self.tk_img)
         self.canvas.config(scrollregion=(0, 0, pix.width, pix.height))
 
 
@@ -2680,25 +2964,13 @@ class Tab:
         self.show_page()
 
 
-    def get_context(self):
-        """获取当前标签页的上下文信息（供插件使用）"""
-        return {
-            "current_page": self.current_page,
-            "total_pages": self.total_pages,
-            "zoom": self.zoom,
-            "doc": self.doc,
-            "file_path": self.file_path
-        }
-
-
     def reset_tab(self):
         """重置标签页状态"""
         if self.doc:
             self.doc.close()
+        self.state = None
         self.doc = None
-        self.current_page = 0
         self.total_pages = 0
-        self.file_path = None
         self.canvas.delete("all")
         # 仅在frame被管理时修改标签标题
         try:
@@ -2804,6 +3076,184 @@ class TabPlugin(Plugin):
 
 
 
+[ZoomIn.py](.\plugins\Tab\Zoom\ZoomIn.py) : 
+``````python
+"""
+此插件实现对页面的放大。
+"""
+
+from tkinter import ttk
+from typing import override
+
+from glueous_plugin import Plugin
+
+
+class ZoomInPlugin(Plugin):
+    """
+    放大插件：允许用户通过快捷键或菜单项放大当前页面。
+    """
+
+    # 插件信息
+    name = "ZoomInPlugin"
+    description = "放大当前页面，快捷键: Ctrl++"
+
+    # 快捷键设置
+    hotkeys = ["<Control-plus>"]
+
+
+    @override
+    def loaded(self) -> None:
+        """
+        注册菜单项、快捷键、“放大”按钮。
+        """
+        # 注册菜单项、快捷键
+        self.context.add_menu_command(
+            path = ["缩放"],
+            label = "放大",
+            command = self.run,
+            accelerator = self.hotkey
+        )
+
+        # “放大”按钮
+        zoom_in_btn = self.context.add_tool(
+        	ttk.Button,
+        	kwargs = {
+        		"text": "+",
+        		"command": self.run,
+        		"width": 2,
+        	}
+        )
+
+        # 将这个按钮组件添加到 context 中，以便其他插件访问
+        self.context.get_zoom_in_button = lambda: zoom_in_btn
+
+
+    @override
+    def run(self) -> None:
+        """
+        执行放大操作。
+        """
+        current_tab = self.context.get_current_tab()
+        if current_tab is None:
+            return
+
+        # 获取当前缩放级别
+        current_zoom = current_tab.zoom
+
+        # 获取预设的缩放等级列表
+        zoom_levels = self.context.get_setting("zoom_levels", [100])
+
+        # 找到下一个更大的缩放级别
+        new_zoom = zoom_levels[-1]  # 默认最大级别
+        for level in zoom_levels:
+            if level > current_zoom:
+                new_zoom = level
+                break
+
+        # 更新缩放级别
+        current_tab.update_zoom(new_zoom)
+
+
+    @override
+    def unloaded(self) -> None:
+        pass
+
+``````
+
+
+
+[ZoomOut.py](.\plugins\Tab\Zoom\ZoomOut.py) : 
+``````python
+"""
+此插件实现对页面的缩小。
+"""
+
+from tkinter import ttk
+from typing import override
+
+from glueous_plugin import Plugin
+
+
+class ZoomOutPlugin(Plugin):
+    """
+    缩小插件：允许用户通过快捷键或菜单项缩小当前页面。
+    """
+
+    # 插件信息
+    name = "ZoomOutPlugin"
+    description = "缩小当前页面，快捷键: Ctrl+-"
+
+    # 快捷键设置
+    hotkeys = ["<Control-minus>"]
+
+
+    @override
+    def loaded(self) -> None:
+        """
+        注册菜单项、快捷键、“缩小”按钮。
+        """
+        # 注册菜单项、快捷键
+        self.context.add_menu_command(
+            path = ["缩放"],
+            label = "缩小",
+            command = self.run,
+            accelerator = self.hotkey
+        )
+
+        # “缩小”按钮
+        zoom_out_btn = self.context.add_tool(
+            ttk.Button,
+            kwargs = {
+                "text": "-",
+                "command": self.run,
+                "width": 2,
+            }
+        )
+
+        # 将这个按钮组件添加到 context 中，以便其他插件访问
+        self.context.get_zoom_out_button = lambda: zoom_out_btn
+
+
+    @override
+    def run(self) -> None:
+        """
+        执行缩小操作。
+        """
+        current_tab = self.context.get_current_tab()
+        if current_tab is None:
+            return
+
+        # 获取当前缩放级别
+        current_zoom = current_tab.zoom
+
+        # 获取预设的缩放等级列表
+        zoom_levels = self.context.get_setting("zoom_levels", [100])
+
+        # 找到下一个更小的缩放级别
+        new_zoom = zoom_levels[0]  # 默认最小级别
+        for level in reversed(zoom_levels):
+            if level < current_zoom:
+                new_zoom = level
+                break
+
+        # 更新缩放级别
+        current_tab.update_zoom(new_zoom)
+
+
+    @override
+    def unloaded(self) -> None:
+        pass
+
+``````
+
+
+
+[ZoomIn.cpython-313.pyc](.\plugins\Tab\Zoom\__pycache__\ZoomIn.cpython-313.pyc) : 
+
+
+[ZoomOut.cpython-313.pyc](.\plugins\Tab\Zoom\__pycache__\ZoomOut.cpython-313.pyc) : 
+
+
 [__init__.py](.\plugins\Tab\__init__.py) : 
 ``````python
 
@@ -2815,6 +3265,9 @@ class TabPlugin(Plugin):
 
 
 [Tab.cpython-313.pyc](.\plugins\Tab\__pycache__\Tab.cpython-313.pyc) : 
+
+
+[__init__.cpython-313.pyc](.\plugins\Tab\__pycache__\__init__.cpython-313.pyc) : 
 
 
 [_copy_plugin](.\plugins\_copy_plugin) : 
@@ -2829,11 +3282,14 @@ from typing import List
 
 # 插件加载顺序
 plugin_loading_order: List[str] = [
+    "TabPlugin",
     "OpenPlugin",
     "ClosePlugin",
     "PageUpPlugin",
     "PageNoPlugin",
     "PageDownPlugin",
+    "ZoomOutPlugin",
+    "ZoomInPlugin",
 ]
 
 ``````
@@ -2853,6 +3309,9 @@ plugin_loading_order: List[str] = [
 
 
 [project.md](.\project.md) : 
+
+
+[README.md](.\README.md) : 
 
 
 [requirements.txt](.\requirements.txt) : 

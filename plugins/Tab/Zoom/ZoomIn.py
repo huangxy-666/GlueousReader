@@ -18,7 +18,7 @@ class ZoomInPlugin(Plugin):
     description = "放大当前页面，快捷键: Ctrl++"
 
     # 快捷键设置
-    hotkey = "<Control-plus>"
+    hotkeys = ["<Control-plus>"]
 
 
     @override

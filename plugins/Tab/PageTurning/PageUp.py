@@ -18,7 +18,7 @@ class PageUpPlugin(Plugin):
     description = "切换到上一页，快捷键: PageUp"
 
     # 快捷键设置
-    hotkey = "<Prior>"  # 对应 PageUp 键
+    hotkeys = ["<Prior>"]  # 对应 PageUp 键
 
 
     @override

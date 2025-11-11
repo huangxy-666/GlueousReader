@@ -1,11 +1,11 @@
 {
     "file_states": [
         {
-            "file_path": "C:/Users/jerry/Desktop/\u590d\u65e6\u5927\u5b66\u8ba1\u7b97\u4e0e\u667a\u80fd\u521b\u65b0\u5b66\u9662\u63a8\u8350\u4f18\u79c0\u672c\u79d1\u6bd5\u4e1a\u751f\u514d\u8bd5\u653b\u8bfb\u7814\u7a76\u751f\u5de5\u4f5c\u5b9e\u65bd\u529e\u6cd5.pdf",
+            "file_path": "D:/\u745e\u745e\u5b66\u4e60--\u5b66\u6821/12\u4fe1\u606f\u6280\u672f/3\u5927\u5b66/\u534e\u4e3a\u667a\u80fd\u673a\u5668\u4eba\u51ac\u4ee4\u8425/\u534e\u4e3a\u667a\u80fd\u673a\u5668\u4eba\u51ac\u4ee4\u8425\u4ecb\u7ecd.pdf",
             "favorites": [],
             "is_pinned": false,
             "is_missing": false,
-            "open_count": 8,
+            "open_count": 1,
             "use_default_state": false,
             "display_mode": "continuous",
             "scroll_pos": [
@@ -14,6 +14,33 @@
             ],
             "page_no": 0,
             "zoom": 75,
+            "rotation": 0,
+            "window_state": 0,
+            "window_pos": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "show_toc": false,
+            "sidebar_dx": 572,
+            "display_r2l": false,
+            "reparse_idx": 0
+        },
+        {
+            "file_path": "C:/Users/jerry/Desktop/\u590d\u65e6\u5927\u5b66\u8ba1\u7b97\u4e0e\u667a\u80fd\u521b\u65b0\u5b66\u9662\u63a8\u8350\u4f18\u79c0\u672c\u79d1\u6bd5\u4e1a\u751f\u514d\u8bd5\u653b\u8bfb\u7814\u7a76\u751f\u5de5\u4f5c\u5b9e\u65bd\u529e\u6cd5.pdf",
+            "favorites": [],
+            "is_pinned": false,
+            "is_missing": false,
+            "open_count": 11,
+            "use_default_state": false,
+            "display_mode": "continuous",
+            "scroll_pos": [
+                0.0,
+                0.0
+            ],
+            "page_no": 0,
+            "zoom": 150,
             "rotation": 0,
             "window_state": 0,
             "window_pos": [
