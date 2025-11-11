@@ -1,0 +1,58 @@
+{
+    "file_states": [
+        {
+            "file_path": "D:/\u745e\u745e\u5b66\u4e60--\u5b66\u6821/00\u8bed\u6587/\u7535\u5b50\u4e66/\u300a\u4eba\u7c7b\u7b80\u53f2\u300b.pdf",
+            "favorites": [],
+            "is_pinned": false,
+            "is_missing": false,
+            "open_count": 1,
+            "use_default_state": false,
+            "display_mode": "continuous",
+            "scroll_pos": [
+                0.0,
+                0.0
+            ],
+            "page_no": 0,
+            "zoom": 100.0,
+            "rotation": 0,
+            "window_state": 0,
+            "window_pos": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "show_toc": false,
+            "sidebar_dx": 572,
+            "display_r2l": false,
+            "reparse_idx": 0
+        },
+        {
+            "file_path": "D:/\u745e\u745e\u5b66\u4e60--\u5b66\u6821/00\u8bed\u6587/\u7535\u5b50\u4e66/\u767e\u5e74\u5b64\u72ec \u52a0\u897f\u4e9a\u00b7\u9a6c\u5c14\u514b\u65af.pdf",
+            "favorites": [],
+            "is_pinned": false,
+            "is_missing": false,
+            "open_count": 1,
+            "use_default_state": false,
+            "display_mode": "continuous",
+            "scroll_pos": [
+                0.0,
+                0.0
+            ],
+            "page_no": 8,
+            "zoom": 100.0,
+            "rotation": 0,
+            "window_state": 0,
+            "window_pos": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "show_toc": false,
+            "sidebar_dx": 572,
+            "display_r2l": false,
+            "reparse_idx": 0
+        }
+    ]
+}

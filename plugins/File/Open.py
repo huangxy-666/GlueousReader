@@ -4,7 +4,6 @@
 
 from tkinter import filedialog, messagebox
 import os
-from glueous import Tab
 from glueous_plugin import Plugin
 
 

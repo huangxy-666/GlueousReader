@@ -41,7 +41,7 @@ class PageNoPlugin(Plugin):
         current_tab = self.context.get_current_tab()
         if current_tab and current_tab.total_pages > 0:
             self.page_label.config(
-                text=f"{current_tab.current_page + 1}/{current_tab.total_pages}"
+                text=f"{current_tab.page_no + 1}/{current_tab.total_pages}"
             )
         else:
             self.page_label.config(text = "0/0")

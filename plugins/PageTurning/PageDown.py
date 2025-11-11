@@ -48,13 +48,11 @@ class PageDownPlugin(Plugin):
             return
 
         # 切换到下一页
-        if current_tab.current_page < current_tab.total_pages - 1:
-            current_tab.current_page += 1
-            current_tab.show_page()
+        if current_tab.page_down():
             self.context.update_page_number()
         else:
             print("已经是最后一页")
 
 
     def unloaded(self) -> None:
-        return
+        pass

@@ -1,16 +1,15 @@
 from __future__ import annotations
 
 from pathlib import Path
+import json
 import tkinter as tk
 from tkinter import filedialog, messagebox, ttk, Menu
-from typing import Any, Dict, List, TYPE_CHECKING
+from typing import Any, Callable, Dict, List
 from types import ModuleType
 
 from .ReaderAccess  import ReaderAccess
 from .PluginManager import PluginManager
 
-if TYPE_CHECKING:
-    from .Tab import Tab
 
 
 def construct_menu(menu: tk.Menu, menu_structure: List[Dict[str, Any]]) -> None:
@@ -112,13 +111,29 @@ class Reader:
         # 创建标签页容器
         self.notebook = ttk.Notebook(self.root)
         self.notebook.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
-        self.tabs: List[Tab] = []
 
         self.access = ReaderAccess(self)
         self.plugin_manager = PluginManager(self.access)
         self.plugin_manager.load_plugins_from_directory(Path(self.settings["plugin_directory_path"]))
         self.plugin_manager.bind_hotkeys()
         self.plugin_manager.loaded()
+
+        # 加载数据文件 data.json
+        # 插件可以使用 `data` 中的信息恢复上次打开的文件和状态
+        self.data: Dict[str, Any] = {}
+        try:
+            with open(self.settings["data_path"], mode = "r", encoding = self.settings["encoding"]) as file:
+                self.data = json.load(file)
+        except FileNotFoundError:
+            pass
+        except Exception as e:
+            print(f"读取数据文件时出错: {e}")
+
+        # 在整个 mainloop 中要周期性执行的函数
+        # 每一条的格式： [函数, [参数1, 参数2, ...]]
+        self.periodically_executed_functions: List[[Callable, List[Any]]] = [
+            [self.dump_data, []],
+        ]
 
 
     def update_menubar(self) -> None:
@@ -129,33 +144,36 @@ class Reader:
         construct_menu(self.menubar, self.menu_structure)
 
 
-    def get_current_tab(self) -> Tab | None:
+    def dump_data(self) -> None:
         """
-        获取当前激活的标签页实例。
+        导出数据文件 data.json。
         """
-        if not self.tabs:
-            return None
 
-        # 获取当前选中标签页的路径字符串
-        current_frame_path = self.notebook.select()
-        if not current_frame_path:
-            return None
-
-        # 将路径字符串转换为窗口对象
+        # 写入数据文件
         try:
-            current_frame = self.root.nametowidget(current_frame_path)
-        except KeyError:
-            return None
+            with open(self.settings["data_path"], mode = "w", encoding = self.settings["encoding"]) as file:
+                json.dump(self.data, file, indent = 4, ensure_ascii = True)
+        except Exception as e:
+            print(f"写入数据文件时出错: {e}")
 
-        # 3. 从标签页列表中找到匹配的 Tab
-        for tab in self.tabs:
-            if tab.frame == current_frame:
-                return tab
-        return None
+
+    def periodically_execute(self) -> None:
+        """
+        执行在整个 mainloop 中要周期性执行的函数。
+        """
+        for (function, args) in self.periodically_executed_functions:
+            try:
+                function(*args)
+            except Exception as error:
+                print(f"in reader.periodically_execute: {function.__name__}: {error.__class__.__name__}: {error}")
+
+        # 每隔一定时间再次执行
+        self.root.after(self.settings["frequency"], self.periodically_execute)
 
 
     def mainloop(self) -> None:
         """
         进入主循环。
         """
+        self.periodically_execute()
         self.root.mainloop()

@@ -1,9 +1,8 @@
 from __future__ import annotations
 
 import tkinter as tk
+from tkinter import ttk
 from typing import Any, Dict, Iterable, List, Type, TYPE_CHECKING
-
-from .Tab import Tab
 
 if TYPE_CHECKING:
     from .Reader import Reader
@@ -15,7 +14,8 @@ class ReaderAccess:
     """
 
     def __init__(self, reader: Reader):
-        # 非必要情况，插件最好不要直接访问这个属性
+        # Do not directly access this attribute
+        # unless you have a clear understanding of what you are doing.
         self._reader: Reader = reader
 
 
@@ -128,40 +128,15 @@ class ReaderAccess:
         self._reader.notebook.bind(*args, **kwargs)
 
 
-    def create_tab(self, file_path: str | None = None) -> Tab:
+    def get_notebook(self) -> ttk.Notebook:
         """
-        创建新标签页
+        获取标签页容器。
         """
-        new_tab = Tab(self._reader.notebook)
-
-        if file_path:
-            new_tab.open_pdf(file_path)
-
-        # 激活新标签页
-        self._reader.notebook.select(new_tab.frame)
-
-        # 添加到标签页列表
-        self._reader.tabs.append(new_tab)
+        return self._reader.notebook
 
 
-    @property
-    def tabs(self) -> List[Tab]:
-        return self._reader.tabs
-
-
-    def get_current_tab(self) -> Tab | None:
+    def get_data(self) -> Dict[str, Any]:
         """
-        获取当前激活的标签页实例。
+        返回对应用数据的引用，插件可以写入该对象以实现数据持久化。
         """
-        return self._reader.get_current_tab()
-
-
-    def close_tab(self, tab: Tab):
-        """
-        关闭一个标签页，返回是否成功关闭。
-        """
-        if tab in self._reader.tabs:
-            self._reader.tabs.remove(tab)
-
-        tab.reset_tab()
-        self._reader.notebook.forget(tab.frame)
+        return self._reader.data

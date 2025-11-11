@@ -48,13 +48,11 @@ class PageUpPlugin(Plugin):
             return
 
         # 切换到上一页
-        if current_tab.current_page > 0:
-            current_tab.current_page -= 1
-            current_tab.show_page()
+        if current_tab.page_up():
             self.context.update_page_number()
         else:
             print("已经是第一页")
 
 
     def unloaded(self) -> None:
-        return
+        pass
