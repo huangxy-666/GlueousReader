@@ -149,4 +149,4 @@ class ShowPageInfoPlugin(Plugin):
     pip install -r path/to/your/project/requirements.txt
     ```
 
-3. 运行 `/main.py` 。
+3. 运行 [`/main.py`](/main.py) 。
