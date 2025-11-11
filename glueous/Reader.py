@@ -152,7 +152,7 @@ class Reader:
         # 写入数据文件
         try:
             with open(self.settings["data_path"], mode = "w", encoding = self.settings["encoding"]) as file:
-                json.dump(self.data, file, indent = 4, ensure_ascii = True)
+                json.dump(self.data, file, indent = 4, ensure_ascii = False)
         except Exception as e:
             print(f"写入数据文件时出错: {e}")
 

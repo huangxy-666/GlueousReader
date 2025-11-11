@@ -15,7 +15,33 @@ class ZoomOutPlugin(Plugin):
 
     # 插件信息
     name = "ZoomOutPlugin"
-    description = "缩小当前页面，快捷键: Ctrl+-"
+    description = """
+# ZoomOutPlugin
+
+- name: ZoomOutPlugin
+- author: Jerry
+- hotkeys: `Ctrl+-`
+- menu entrance: `缩放 → 缩小`
+
+## Function
+
+Shrink the current page.
+
+## Api
+
+None.
+
+## Depend
+
+Python extension library: None
+
+Other plugins:
+- TabPlugin
+
+## Others
+
+None.
+"""
 
     # 快捷键设置
     hotkeys = ["<Control-minus>"]

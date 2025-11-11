@@ -32,6 +32,10 @@ Python extension library: None
 
 Other plugins:
 - TabPlugin
+
+## Others
+
+None.
 """
 
     # 快捷键设置

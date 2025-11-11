@@ -10,13 +10,38 @@ from glueous_plugin import Plugin
 
 class PageNoPlugin(Plugin):
     """
-    页码显示插件：在状态栏显示当前页码和总页数。
+    页码显示插件：在工具栏显示当前页码和总页数。
     """
 
     # 插件信息
     name = "PageNoPlugin"
-    description = "在状态栏显示当前页码和总页数"
+    description = """
+# PageNoPlugin
 
+- name: PageNoPlugin
+- author: Jerry
+- hotkeys: None
+- menu entrance: None
+
+## Function
+
+Display the current page number and total page number in the toolbar.
+
+## Api
+
+- `context.update_page_number()`: Update page number display.
+
+## Depend
+
+Python extension library: None
+
+Other plugins:
+- TabPlugin
+
+## Others
+
+Page number calculation: 'Tab.page_no' is a 0-based index.
+"""
 
     @override
     def loaded(self) -> None:

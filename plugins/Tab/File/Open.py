@@ -14,7 +14,35 @@ class OpenPlugin(Plugin):
 
     # 插件信息
     name = "OpenPlugin"
-    description = "打开PDF或EPUB文件，快捷键: Ctrl+O"
+    description = """
+# OpenPlugin
+
+- name: OpenPlugin
+- author: Jerry
+- hotkeys: `Ctrl+O`
+- menu entrance: `文件 → 打开`
+
+## Function
+
+Open a file dialog to select and open a PDF or EPUB file in a new tab.
+
+If the file does not exist, an error message will be displayed.
+
+## Api
+
+None.
+
+## Depend
+
+Python extension library: None
+
+Other plugins:
+- TabPlugin
+
+## Others
+
+None.
+"""
 
     # 快捷键设置
     hotkeys = ["<Control-o>"]

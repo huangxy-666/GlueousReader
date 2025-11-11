@@ -15,7 +15,33 @@ class ZoomInPlugin(Plugin):
 
     # 插件信息
     name = "ZoomInPlugin"
-    description = "放大当前页面，快捷键: Ctrl++"
+    description = """
+# ZoomInPlugin
+
+- name: ZoomInPlugin
+- author: Jerry
+- hotkeys: `Ctrl++`
+- menu entrance: `缩放 → 放大`
+
+## Function
+
+Enlarge the current page.
+
+## Api
+
+None.
+
+## Depend
+
+Python extension library: None
+
+Other plugins:
+- TabPlugin
+
+## Others
+
+None.
+"""
 
     # 快捷键设置
     hotkeys = ["<Control-plus>"]

@@ -17,7 +17,37 @@ class PageDownPlugin(Plugin):
 
     # 插件信息
     name = "PageDownPlugin"
-    description = "切换到下一页，快捷键: PageDown"
+    description = """
+# PageDownPlugin
+
+- name: PageDownPlugin
+- author: Jerry
+- hotkeys: `PageDown`
+- menu entrance: `前往 → 下一页`
+
+## Function
+
+Switch to the next page.
+
+When the last page is reached, a prompt message "已经是最后一页" will be displayed in the console.
+
+## Api
+
+- `context.get_next_button()`: Get the 'Next Page' button component.
+- `context.update_page_turning_button()`: Update page switch button status.
+
+## Depend
+
+Python extension library: None
+
+Other plugins:
+- TabPlugin
+- PageNoPlugin
+
+## Others
+
+Page number calculation: 'Tab.page_no' is a 0-based index.
+"""
 
     # 快捷键设置
     hotkeys = ["<Next>"]  # 对应 PageDown 键

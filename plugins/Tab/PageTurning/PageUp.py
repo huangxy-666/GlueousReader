@@ -15,7 +15,36 @@ class PageUpPlugin(Plugin):
 
     # 插件信息
     name = "PageUpPlugin"
-    description = "切换到上一页，快捷键: PageUp"
+    description = """
+# PageUpPlugin
+
+- name: PageUpPlugin
+- author: Jerry
+- hotkeys: `PageUp`
+- menu entrance: `前往 → 上一页`
+
+## Function
+
+Switch to the previous page.
+
+When the first page is reached, a prompt message "已经是第一页" will be displayed in the console.
+
+## Api
+
+- `context.get_prev_button()`: Get the 'Previous Page' button component.
+
+## Depend
+
+Python extension library: None
+
+Other plugins:
+- TabPlugin
+- PageNoPlugin
+
+## Others
+
+Page number calculation: 'Tab.page_no' is a 0-based index.
+"""
 
     # 快捷键设置
     hotkeys = ["<Prior>"]  # 对应 PageUp 键

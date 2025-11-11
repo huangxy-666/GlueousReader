@@ -194,8 +194,40 @@ class TabPlugin(Plugin):
 
     # 插件信息
     name = "TabPlugin"
-    description = "提供对标签页的管理接口"
+    description = """
+# TabPlugin
 
+- name: TabPlugin
+- author: Jerry
+- hotkeys: None
+- menu entrance: None
+
+## Function
+
+Manage tab operations including creating, getting current tab, and closing tabs. 
+
+Provide core tab functionality for the PDF reader.
+
+## Api
+
+- `context.create_tab(file_path)`: Create a new tab with the specified file path.
+- `context.get_current_tab()`: Get the currently active tab.
+- `context.close_tab(tab)`: Close the specified tab.
+- `context.tabs`: List of all open tabs.
+- `context.Tab`: The Tab class itself.
+
+## Depend
+
+Python extension library:
+- fitz (PyMuPDF)
+- PIL (Pillow)
+
+Other plugins: None
+
+## Others
+
+This plugin must be loaded before any other plugins that manipulate tabs.
+"""
 
     @staticmethod
     def create_tab(access: ReaderAccess, file_path: str | None = None) -> Tab:
@@ -208,7 +240,7 @@ class TabPlugin(Plugin):
         access._reader.notebook.select(new_tab.frame)
 
         # 添加到标签页列表
-        access._reader.tabs.append(new_tab)
+        access.tabs.append(new_tab)
 
 
     @staticmethod
@@ -218,7 +250,7 @@ class TabPlugin(Plugin):
         """
         reader = access._reader
 
-        if not reader.tabs:
+        if not access.tabs:
             return None
 
         # 获取当前选中标签页的路径字符串
@@ -233,7 +265,7 @@ class TabPlugin(Plugin):
             return None
 
         # 从标签页列表中找到匹配的 Tab
-        for tab in reader.tabs:
+        for tab in access.tabs:
             if tab.frame == current_frame:
                 return tab
         return None
@@ -244,13 +276,11 @@ class TabPlugin(Plugin):
         """
         关闭一个标签页，返回是否成功关闭。
         """
-        reader = access._reader
-
-        if tab in reader.tabs:
-            reader.tabs.remove(tab)
+        if tab in access.tabs:
+            access.tabs.remove(tab)
 
         tab.reset_tab()
-        reader.notebook.forget(tab.frame)
+        access._reader.notebook.forget(tab.frame)
 
 
     @override
@@ -258,14 +288,12 @@ class TabPlugin(Plugin):
         """
         在插件被加载时运行。
         """
-        reader = self.context._reader
-        reader.tabs: List[Tab] = []
 
         # 添加操作标签的接口，方便其他插件调用
         self.context.create_tab      = MethodType(self.create_tab     , self.context)
         self.context.get_current_tab = MethodType(self.get_current_tab, self.context)
         self.context.close_tab       = MethodType(self.close_tab      , self.context)
-        self.context.tabs: List[Tab] = reader.tabs
+        self.context.tabs: List[Tab] = []
         self.context.Tab : type      = Tab
 
 
