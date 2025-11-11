@@ -61,6 +61,7 @@ class ReaderAccess:
                 current_menu["children"].append(new_menu)
                 current_menu = new_menu
 
+        self.update_menubar()
         return current_menu
 
 
@@ -72,6 +73,7 @@ class ReaderAccess:
         """
         menu = self.add_menu(path)
         menu["children"].append({"type": "seperator"})
+        self.update_menubar()
 
 
     def add_menu_command(self, path: Iterable[str], **kwargs: Dict[str, Any]) -> None:
@@ -84,6 +86,7 @@ class ReaderAccess:
         """
         menu = self.add_menu(path)
         menu["children"].append({"type": "command", **kwargs})
+        self.update_menubar()
 
 
     def update_menubar(self) -> None:
@@ -95,9 +98,9 @@ class ReaderAccess:
 
     def add_tool(
         self,
-        Widget: Type, *args,
+        Widget: Type, *,
+        args: List[Any] = None, kwargs: Dict[str, Any] = None,
         side: str = tk.LEFT, padx: int = 5, pady: int = 5,
-        **kwargs
     ) -> tk.Widget:
         """
         添加一个工具。
@@ -107,6 +110,10 @@ class ReaderAccess:
 
         返回创建的组件实例。
         """
+        if args is None:
+            args = []
+        if kwargs is None:
+            kwargs = {}
         # 创建组件实例
         widget_instance = Widget(self._reader.toolbar, *args, **kwargs)
         # 添加到工具栏

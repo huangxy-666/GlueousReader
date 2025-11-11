@@ -29,7 +29,6 @@ class OpenPlugin(Plugin):
             command = self.run,
             accelerator = self.hotkey
         )
-        self.context.update_menubar()
 
 
     def run(self) -> None:
@@ -58,6 +57,8 @@ class OpenPlugin(Plugin):
 
         # 创建新标签页
         self.context.create_tab(file_path)
+        self.context.update_page_number()
+        self.context.update_page_turning_button()
 
 
     def unloaded(self) -> None:

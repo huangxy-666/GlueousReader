@@ -27,7 +27,6 @@ class ClosePlugin(Plugin):
             command = self.run,
             accelerator = self.hotkey
         )
-        self.context.update_menubar()
 
 
     def run(self) -> None:

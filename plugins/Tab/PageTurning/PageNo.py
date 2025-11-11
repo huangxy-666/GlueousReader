@@ -3,6 +3,8 @@
 """
 
 from tkinter import ttk
+from typing import override
+
 from glueous_plugin import Plugin
 
 
@@ -16,6 +18,7 @@ class PageNoPlugin(Plugin):
     description = "在状态栏显示当前页码和总页数"
 
 
+    @override
     def loaded(self) -> None:
         """
         初始化页码标签并添加到状态栏。
@@ -24,7 +27,9 @@ class PageNoPlugin(Plugin):
         self.page_label = self.context.add_tool(
             ttk.Label,
             padx = 10,
-            text = "0/0",
+            kwargs = {
+                "text": "0/0",
+            }
         )
 
         # 绑定标签页切换事件，以更新页码显示
@@ -47,6 +52,7 @@ class PageNoPlugin(Plugin):
             self.page_label.config(text = "0/0")
 
 
+    @override
     def run(self) -> None:
         """
         插件执行方法（此处无需特殊处理）。
@@ -54,5 +60,6 @@ class PageNoPlugin(Plugin):
         pass
 
 
+    @override
     def unloaded(self) -> None:
         pass

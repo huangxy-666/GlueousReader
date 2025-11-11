@@ -11,4 +11,6 @@ plugin_loading_order: List[str] = [
     "PageUpPlugin",
     "PageNoPlugin",
     "PageDownPlugin",
+    "ZoomOutPlugin",
+    "ZoomInPlugin",
 ]

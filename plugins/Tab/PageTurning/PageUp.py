@@ -3,6 +3,8 @@
 """
 
 from tkinter import ttk
+from typing import override
+
 from glueous_plugin import Plugin
 
 
@@ -19,26 +21,34 @@ class PageUpPlugin(Plugin):
     hotkey = "<Prior>"  # 对应 PageUp 键
 
 
+    @override
     def loaded(self) -> None:
         """
         注册菜单项、快捷键、“上一页”按钮。
         """
         # 注册菜单项、快捷键
         self.context.add_menu_command(
-            path=["前往"],
-            label="上一页",
-            command=self.run,
-            accelerator=self.hotkey
+            path = ["前往"],
+            label = "上一页",
+            command = self.run,
+            accelerator = self.hotkey
         )
-        self.context.update_menubar()
 
         # “上一页”按钮
-        prev_btn = self.context.add_tool(ttk.Button, text="上一页", command = self.run)
+        prev_btn = self.context.add_tool(
+            ttk.Button,
+            kwargs = {
+                "text": "←",
+                "command": self.run,
+                "width": 3,
+            }
+        )
 
         # 将这个按钮组件添加到 context 中，以便其他插件访问
         self.context.get_prev_button = lambda: prev_btn
 
 
+    @override
     def run(self) -> None:
         """
         执行上一页操作。
@@ -48,11 +58,15 @@ class PageUpPlugin(Plugin):
             return
 
         # 切换到上一页
-        if current_tab.page_up():
+        if current_tab.page_no > 0:
+            current_tab.page_no -= 1
+            current_tab.show_page()
             self.context.update_page_number()
+            self.context.update_page_turning_button()
         else:
             print("已经是第一页")
 
 
+    @override
     def unloaded(self) -> None:
         pass

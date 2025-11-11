@@ -164,28 +164,6 @@ class Tab:
         self.canvas.config(scrollregion=(0, 0, pix.width, pix.height))
 
 
-    def page_up(self) -> bool:
-        """
-        向上翻页。
-        """
-        if self.page_no > 0:
-            self.page_no -= 1
-            self.show_page()
-            return True
-        return False
-
-
-    def page_down(self) -> bool:
-        """
-        向下翻页。
-        """
-        if self.page_no < self.total_pages - 1:
-            self.page_no += 1
-            self.show_page()
-            return True
-        return False
-
-
     def update_zoom(self, zoom_level):
         """更新缩放比例"""
         self.zoom = zoom_level
