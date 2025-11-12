@@ -97,7 +97,7 @@ None.
                 break
 
         # 更新缩放级别
-        current_tab.update_zoom(new_zoom)
+        current_tab.zoom = new_zoom
 
 
     @override

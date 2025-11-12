@@ -18,14 +18,14 @@ class PDFViewer(tk.Toplevel):
         # --- 渲染参数（平衡连续、清晰、性能）---
         self.dpi = 200  # 保持优化后的 DPI，兼顾清晰和速度
         self.scale = self.dpi / 72.0  # 缩放因子（PDF默认72 DPI）
-        
+
         # 总像素尺寸
         self.total_pix_width = int(self.page_rect.width * self.scale)
         self.total_pix_height = int(self.page_rect.height * self.scale)
 
         # --- UI 组件 ---
         self.canvas = tk.Canvas(self, bg="gray")
-        
+
         # 重写 xview/yview（绑定视图变化）
         original_xview = self.canvas.xview
         original_yview = self.canvas.yview
@@ -42,11 +42,11 @@ class PDFViewer(tk.Toplevel):
 
         self.canvas.xview = custom_xview
         self.canvas.yview = custom_yview
-        
+
         # 滚动条配置
-        self.v_scroll = ttk.Scrollbar(self, orient="vertical", command=self.canvas.yview)
-        self.h_scroll = ttk.Scrollbar(self, orient="horizontal", command=self.canvas.xview)
-        
+        self.v_scroll = ttk.Scrollbar(self, orient=tk.VERTICAL, command=self.canvas.yview)
+        self.h_scroll = ttk.Scrollbar(self, orient=tk.HORIZONTAL, command=self.canvas.xview)
+
         self.canvas.configure(
             xscrollcommand=self.h_scroll.set,
             yscrollcommand=self.v_scroll.set,
@@ -70,7 +70,7 @@ class PDFViewer(tk.Toplevel):
         self.canvas.bind("<MouseWheel>", self.on_mousewheel)
         self.canvas.bind("<Button-4>", self.on_mousewheel)
         self.canvas.bind("<Button-5>", self.on_mousewheel)
-        
+
         # 首次渲染
         self.schedule_render(delay=100)
 
@@ -78,13 +78,13 @@ class PDFViewer(tk.Toplevel):
         """计算当前可见区域（含扩大边距）"""
         x_view_start, x_view_end = self.canvas.xview()
         y_view_start, y_view_end = self.canvas.yview()
-        
+
         # 可见区域像素坐标
         pix_x1 = x_view_start * self.total_pix_width
         pix_y1 = y_view_start * self.total_pix_height
         pix_x2 = x_view_end * self.total_pix_width
         pix_y2 = y_view_end * self.total_pix_height
-        
+
         # 核心修改：扩大边距（80像素），提前渲染周边区域
         margin = self.render_margin
         pix_x1 = max(0, pix_x1 - margin)
@@ -97,7 +97,7 @@ class PDFViewer(tk.Toplevel):
         pdf_y1 = pix_y1 / self.scale
         pdf_x2 = pix_x2 / self.scale
         pdf_y2 = pix_y2 / self.scale
-        
+
         return fitz.Rect(pdf_x1, pdf_y1, pdf_x2, pdf_y2)
 
     def schedule_render(self, delay=5):
@@ -110,13 +110,13 @@ class PDFViewer(tk.Toplevel):
         """判断区域是否需要重新渲染"""
         if self.rendered_region is None:
             return True
-        
+
         # 计算中心偏移量
         old_center_x = (self.rendered_region.x0 + self.rendered_region.x1) / 2 * self.scale
         old_center_y = (self.rendered_region.y0 + self.rendered_region.y1) / 2 * self.scale
         new_center_x = (new_rect.x0 + new_rect.x1) / 2 * self.scale
         new_center_y = (new_rect.y0 + new_rect.y1) / 2 * self.scale
-        
+
         offset_x = abs(new_center_x - old_center_x)
         offset_y = abs(new_center_y - old_center_y)
         return offset_x > self.render_threshold or offset_y > self.render_threshold
@@ -127,7 +127,7 @@ class PDFViewer(tk.Toplevel):
 
         if not self.is_region_changed(visible_pdf_rect):
             return
-        
+
         self.rendered_region = visible_pdf_rect
 
         # 渲染扩大后的区域
@@ -139,11 +139,11 @@ class PDFViewer(tk.Toplevel):
 
         # 图像转换
         img = Image.frombytes("RGB", (pix.width, pix.height), pix.samples)
-        
+
         # 绘制图像（位置对齐原始可见区域）
         self.canvas.delete("all")
         self.tk_img = ImageTk.PhotoImage(image=img)
-        
+
         # 计算绘制起点（含边距的区域左上角）
         pix_x1 = visible_pdf_rect.x0 * self.scale
         pix_y1 = visible_pdf_rect.y0 * self.scale

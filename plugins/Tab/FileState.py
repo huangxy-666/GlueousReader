@@ -69,6 +69,10 @@ class FileState:
     FileState 类，记录 Tab 类的状态，可以序列化为 JSON 对象来存储，用于在下次重新打开程序时能恢复到上次打开时的状态。
     """
 
+    DISPLAY_MODES = ("single page", "continuous", "facing", "book view")
+
+    ROTATIONS = (0, 90, 180, 270)
+
     def __init__(self, file_path: str = ""):
         """
         默认构造方法，只要提供 `file_path` 参数。
@@ -95,14 +99,14 @@ class FileState:
         # - `single page` / `continuous` / `facing` / `book view`
         self.display_mode = "continuous"
 
-        # 客户区左上角的滚动偏移量（单位：逻辑像素）
+        # 客户区左上角的滚动偏移量（单位：逻辑像素，Page 坐标）
         self.scroll_pos = (0.0, 0.0)
 
         # 当前“活跃页”编号（1-based）
         self.page_no = 1
 
-        # 缩放百分比
-        self.zoom = 100.0
+        # 缩放比
+        self.zoom = 1.0
 
         # 页面旋转角度，0/90/180/270 四选一
         self.rotation = 0
@@ -154,7 +158,7 @@ class FileState:
                 "display_mode": "continuous",
                 "scroll_pos": [0.0, 0.0],
                 "page_no": 1,
-                "zoom": 100.0,
+                "zoom": 1.0,
                 "rotation": 0,
                 "window_state": 0,
                 "window_pos": [0, 0, 0, 0],
@@ -181,7 +185,7 @@ class FileState:
         instance.use_default_state  = json_obj.get("use_default_state", False)
         instance.display_mode       = json_obj.get("display_mode", "continuous")
         instance.page_no            = json_obj.get("page_no", 1)
-        instance.zoom               = json_obj.get("zoom", 100.0)
+        instance.zoom               = json_obj.get("zoom", 1.0)
         instance.rotation           = json_obj.get("rotation", 0)
         instance.window_state       = json_obj.get("window_state", 0)
         instance.show_toc           = json_obj.get("show_toc", False)
@@ -226,7 +230,7 @@ class FileState:
                 "display_mode": "continuous",
                 "scroll_pos": [0.0, 0.0],
                 "page_no": 1,
-                "zoom": 100.0,
+                "zoom": 1.0,
                 "rotation": 0,
                 "window_state": 0,
                 "window_pos": [0, 0, 0, 0],

@@ -3,7 +3,7 @@ from __future__ import annotations
 import tkinter as tk
 from tkinter import messagebox, ttk
 import os
-from typing import Any, List, override
+from typing import Any, List, Tuple, override
 from types import MethodType
 
 from PIL import Image, ImageTk
@@ -40,48 +40,163 @@ class Tab:
             # 找遍了也没找到
             self.state = FileState(file_path).to_json()
             file_states.insert(0, self.state)
+        self.doc = None  # PyMuPDF文档对象
 
         # 创建标签页内的UI组件
         self.create_widgets()
 
         # 打开文件
-        self.doc = None  # PyMuPDF文档对象
-        self.total_pages = 0
         self.open()
 
 
-    def __getattr__(self, attr_name: str) -> Any:
+    def __del__(self):
+        """释放资源"""
+        if hasattr(self, 'doc'):
+            self.doc.close()
+
+
+    @property
+    def file_path(self) -> str:
         """
-        返回此对象的属性。如果在此对象本身上找不到，则再在 self.state 里找。
+        当前打开的文件的绝对路径。
         """
-        state = self.__dict__.get('state')
-        if state is not None and attr_name in state:
-            return state[attr_name]
-        raise AttributeError(f"'{self.__class__.__name__}' object has no attribute '{attr_name}'")
+        return self.state["file_path"]
+
+    @file_path.setter
+    def file_path(self, path: str) -> None:
+        raise AttributeError("`file_path 'is a read-only attribute. If you want to open another file, please call the `.open()` method.")
 
 
-    def __setattr__(self, attr_name: str, value: Any) -> None:
+    @property
+    def open_count(self) -> int:
         """
-        设置此对象的属性。如果 attr_name 在 __annotations__ 中，则设置到 self.state 中。
+        文件被打开的次数。
         """
-        # 特殊处理 state 属性本身的设置
-        if attr_name == 'state':
-            super().__setattr__(attr_name, value)
-            return
+        return self.state["open_count"]
 
-        # 获取类的 annotations（即类型提示）
-        annotations = getattr(self.__class__, '__annotations__', {})
+    @open_count.setter
+    def open_count(self, count: int) -> None:
+        if count < 0:
+            raise ValueError(f"Open count cannot be negative, got {count}")
+        self.state["open_count"] = count
 
-        # 安全地获取 state
-        state = self.__dict__.get('state')
 
-        # 如果 attr_name 是类中声明的字段，或 state 还未初始化，或属性不在 state 中
-        # 则直接设置到对象上
-        if (attr_name in annotations) or (state is None) or (attr_name not in state):
-            super().__setattr__(attr_name, value)
-        else:
-            # 设置到 state 中
-            state[attr_name] = value
+    @property
+    def display_mode(self) -> str:
+        """
+        显示模式。
+        """
+        return self.state["display_mode"]
+
+    @display_mode.setter
+    def display_mode(self, mode: str) -> None:
+        if mode not in FileState.DISPLAY_MODES:
+            raise ValueError(f"Invalid display mode: {mode}. Must in {FileState.DISPLAY_MODES}")
+        self.state["display_mode"] = mode
+        self.render_page()
+
+
+    @property
+    def scroll_pos(self) -> Tuple[float, float]:
+        """
+        滚动偏移量（单位：逻辑像素，Page 坐标）。
+        """
+        return self.state["scroll_pos"]
+
+    @scroll_pos.setter
+    def scroll_pos(self, pos: Tuple[float, float]) -> None:
+        self.state["scroll_pos"] = pos
+        # 更新画布滚动位置
+        self.update_view_region()
+        self.render_page()
+
+
+    @property
+    def page_no(self) -> int:
+        """
+        当前页码（1-based）。
+        """
+        return self.state["page_no"]
+
+    @page_no.setter
+    def page_no(self, page_no: int) -> None:
+        if not 0 < page_no <= self.total_pages:
+            raise ValueError(f"Page number out of range: {page_no} (total pages: {self.total_pages})")
+        self.state["page_no"] = page_no
+        self.render_page()
+
+
+    @property
+    def zoom(self) -> float:
+        """
+        缩放比例。
+        """
+        return self.state["zoom"]
+
+    @zoom.setter
+    def zoom(self, zoom_level: float) -> None:
+        if zoom_level <= 0:
+            raise ValueError(f"Zoom level must be positive, got {zoom_level}")
+        self.state["zoom"] = zoom_level
+        scaled_page_rect = self.scaled_page_rect
+
+        # 更新滚动区域
+        self.update_view_region()
+        self.render_page()
+
+
+    @property
+    def rotation(self) -> int:
+        """
+        页面旋转角度。
+        """
+        return self.state["rotation"]
+
+    @rotation.setter
+    def rotation(self, angle: int) -> None:
+        if angle not in FileState.ROTATIONS:
+            raise ValueError(f"Invalid rotation angle: {angle}. Must in {FileState.ROTATIONS}.")
+        self.state["rotation"] = angle
+        self.render_page()
+
+
+    @property
+    def dpi(self) -> int:
+        """
+        分辨率。
+        """
+        return self.context.get_setting("dpi", 72)
+
+
+    @property
+    def total_pages(self) -> int:
+        """
+        这本书的总页数。
+        """
+        return len(self.doc)
+
+
+    @property
+    def page(self) -> fitz.Page | None:
+        """
+        获取当前页的 Page 对象。
+        """
+        if self.doc is None:
+            return None
+        if not 0 < self.page_no <= self.total_pages:
+            raise ValueError(f"Invalid page number: {self.page_no}")
+        return self.doc[self.page_no - 1]
+
+
+    def auto_render(self, func):
+        """
+        装饰器：在函数执行后自动调用 render_page() 方法。
+        """
+        def wrapper(*args, **kwargs):
+            result = func(*args, **kwargs)
+            self.render_page()
+            return result
+        return wrapper
 
 
     def create_widgets(self):
@@ -91,25 +206,87 @@ class Tab:
         # 显示区域（带滚动条）
         self.display_frame = ttk.Frame(self.frame)
 
-        self.vscroll = ttk.Scrollbar(self.display_frame, orient=tk.VERTICAL)
-        self.vscroll.pack(side=tk.RIGHT, fill=tk.Y)
 
-        self.hscroll = ttk.Scrollbar(self.display_frame, orient=tk.HORIZONTAL)
-        self.hscroll.pack(side=tk.BOTTOM, fill=tk.X)
+        # 滚动条
+        self.v_scroll = ttk.Scrollbar(self.display_frame, orient=tk.VERTICAL)
+        self.v_scroll.pack(side=tk.RIGHT, fill=tk.Y)
 
+        self.h_scroll = ttk.Scrollbar(self.display_frame, orient=tk.HORIZONTAL)
+        self.h_scroll.pack(side=tk.BOTTOM, fill=tk.X)
+
+        # 画布
         self.canvas = tk.Canvas(
             self.display_frame,
-            yscrollcommand=self.vscroll.set,
-            xscrollcommand=self.hscroll.set,
-            bg="white",
-            highlightthickness=0
+            xscrollcommand=self.h_scroll.set,
+            yscrollcommand=self.v_scroll.set,
+            bg="gray",
+            highlightthickness=0,
         )
         self.canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
 
-        self.vscroll.config(command=self.canvas.yview)
-        self.hscroll.config(command=self.canvas.xview)
-
         self.display_frame.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
+
+        # 重写 xview/yview（绑定视图变化）
+        original_xview = self.canvas.xview
+        original_yview = self.canvas.yview
+
+        def custom_xview(*args):
+            result = original_xview(*args)
+            if args:
+                proportion = min(max(float(args[1]), 0), 1)
+                self.scroll_pos = (
+                    self.page.rect.width * proportion,
+                    self.scroll_pos[1]
+                )
+                self.render_page()
+            return result
+
+        def custom_yview(*args):
+            result = original_yview(*args)
+            if args:
+                proportion = min(max(float(args[1]), 0), 1)
+                self.scroll_pos = (
+                    self.scroll_pos[0],
+                    self.page.rect.height * proportion
+                )
+                self.render_page()
+            return result
+
+        self.canvas.xview = custom_xview
+        self.canvas.yview = custom_yview
+        self.v_scroll.config(command=self.canvas.yview)
+        self.h_scroll.config(command=self.canvas.xview)
+
+        self.canvas.xview_scroll = self.auto_render(self.canvas.xview_scroll)
+        self.canvas.yview_scroll = self.auto_render(self.canvas.yview_scroll)
+
+
+    def update_view_region(self):
+        """更新滚动条的位置，并同步画布视图"""
+        # 计算视图起始比例（基于滚动位置和页面尺寸）
+        x_view_start = self.scroll_pos[0] / self.page.rect.width
+        y_view_start = self.scroll_pos[1] / self.page.rect.height
+
+        # 计算缩放后的页面尺寸，更新滚动区域
+        scaled_page_rect = self.scaled_page_rect
+        self.canvas.configure(scrollregion=(0, 0, scaled_page_rect.width, scaled_page_rect.height))
+
+        # 计算视图显示长度（基于画布尺寸和页面尺寸）
+        self.canvas.update_idletasks()
+        x_view_length = self.canvas.winfo_width() / scaled_page_rect.width
+        y_view_length = self.canvas.winfo_height() / scaled_page_rect.height
+
+        # 限制视图范围在 [0, 1] 内
+        x_view_end = min(x_view_start + x_view_length, 1.0)
+        y_view_end = min(y_view_start + y_view_length, 1.0)
+
+        # 更新滚动条位置
+        self.h_scroll.set(x_view_start, x_view_end)
+        self.v_scroll.set(y_view_start, y_view_end)
+
+        # 关键：同步更新画布的视图位置（核心修复点）
+        self.canvas.xview_moveto(x_view_start)  # 移动水平视图
+        self.canvas.yview_moveto(y_view_start)  # 移动垂直视图
 
 
     def open(self) -> bool:
@@ -118,34 +295,60 @@ class Tab:
 
         返回是否打开成功。
         """
-        try:
-            # 关闭已打开的文档
-            if self.doc:
-                self.doc.close()
+        # try:
+        # 关闭已打开的文档
+        if self.doc:
+            self.doc.close()
 
-            self.doc = fitz.open(self.file_path)
-            self.total_pages = len(self.doc)
+        self.doc = fitz.open(self.file_path)
 
-            # 刷新显示
-            self.show_page()
+        # 刷新显示
+        self.update_view_region()
+        self.render_page()
 
-            # 更新标签页标题（显示文件名）
-            tab_title = os.path.basename(self.file_path)
-            self.notebook.tab(self.frame, text = tab_title)
+        # 更新标签页标题（显示文件名）
+        tab_title = os.path.basename(self.file_path)
+        self.notebook.tab(self.frame, text = tab_title)
+
+        # 计数打开次数
+        self.state["open_count"] += 1
+        return True
+        # except Exception as e:
+        #     messagebox.showerror("错误", f"打开失败: {str(e)}")
+        #     self.reset_tab()
+        #     return False
 
 
-            # 计数打开次数
-            self.state["open_count"] += 1
-            return True
-        except Exception as e:
-            messagebox.showerror("错误", f"打开失败: {str(e)}")
-            self.reset_tab()
-            return False
+    @property
+    def scaled_page_rect(self) -> fitz.Rect:
+        """
+        返回；经过缩放后，页面的形状矩形。
+        """
+        return self.page.rect * self.zoom
 
 
-    def show_page(self):
+    @property
+    def visible_page_rect(self) -> fitz.Rect:
+        """
+        当前页面的可见区域。
+        """
+        x_view_start, x_view_end = self.canvas.xview()
+        y_view_start, y_view_end = self.canvas.yview()
+
+        # 可见页面区域坐标
+        page_x1 = x_view_start * self.page.rect.width
+        page_y1 = y_view_start * self.page.rect.height
+        page_x2 = x_view_end   * self.page.rect.width
+        page_y2 = y_view_end   * self.page.rect.height
+
+        return fitz.Rect(page_x1, page_y1, page_x2, page_y2)
+
+
+    def render_page(self):
         """
         渲染当前页。
+
+        为加速渲染，仅渲染会显示到画布上的部分。
         """
         if not self.doc or not (0 <= self.page_no < self.total_pages):
             return
@@ -154,20 +357,25 @@ class Tab:
         self.canvas.delete("all")
 
         # 渲染页面图像
-        page = self.doc[self.page_no]
-        mat = fitz.Matrix(self.zoom / 100, self.zoom / 100)
-        pix = page.get_pixmap(matrix=mat)
-        img = Image.frombytes("RGB", [pix.width, pix.height], pix.samples)
+        visible_page_rect = self.visible_page_rect
+        pix = self.page.get_pixmap(
+            clip = visible_page_rect,
+            dpi = int(self.dpi * self.zoom),
+            colorspace = "rgb"
+        )
+
+        # 图像转换
+        img = Image.frombytes("RGB", (pix.width, pix.height), pix.samples)
         self.tk_img = ImageTk.PhotoImage(image=img)
-        ####
-        self.canvas.create_image(self.scroll_pos[0], self.scroll_pos[1], anchor=tk.NW, image=self.tk_img)
-        self.canvas.config(scrollregion=(0, 0, pix.width, pix.height))
 
-
-    def update_zoom(self, zoom_level):
-        """更新缩放比例"""
-        self.zoom = zoom_level
-        self.show_page()
+        # 计算绘制起点
+        visible_canvas_rect = visible_page_rect * self.zoom
+        self.canvas.create_image(
+            visible_canvas_rect.x0,
+            visible_canvas_rect.y0,
+            anchor = tk.NW,
+            image  = self.tk_img
+        )
 
 
     def reset_tab(self):

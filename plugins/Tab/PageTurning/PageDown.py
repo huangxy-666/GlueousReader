@@ -123,7 +123,7 @@ Page number calculation: 'Tab.page_no' is a 0-based index.
         # 切换到下一页
         if current_tab.page_no < current_tab.total_pages - 1:
             current_tab.page_no += 1
-            current_tab.show_page()
+            current_tab.render_page()
             self.context.update_page_number()
             self.context.update_page_turning_button()
         else:
