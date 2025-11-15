@@ -58,7 +58,7 @@ Page number calculation: 'Tab.page_no' is a 0-based index.
         )
 
         # 绑定标签页切换事件，以更新页码显示
-        self.context.bind_notebook("<<NotebookTabChanged>>", self.update_page_number)
+        self.context.add_at_notebook_tab_changed_function(self.update_page_number)
 
         # 方便其他插件调用
         self.context.update_page_number = self.update_page_number

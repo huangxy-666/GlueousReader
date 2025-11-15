@@ -112,12 +112,6 @@ class Reader:
         self.notebook = ttk.Notebook(self.root)
         self.notebook.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
 
-        self.access = ReaderAccess(self)
-        self.plugin_manager = PluginManager(self.access)
-        self.plugin_manager.load_plugins_from_directory(Path(self.settings["plugin_directory_path"]))
-        self.plugin_manager.bind_hotkeys()
-        self.plugin_manager.loaded()
-
         # 加载数据文件 data.json
         # 插件可以使用 `data` 中的信息恢复上次打开的文件和状态
         self.data: Dict[str, Any] = {}
@@ -134,6 +128,15 @@ class Reader:
         self.periodically_executed_functions: List[[Callable, List[Any]]] = [
             [self.dump_data, []],
         ]
+
+        # 在每次标签页切换时要执行的函数
+        self.at_notebook_tab_changed_functions: List[[Callable, List[Any]]] = []
+
+        self.access = ReaderAccess(self)
+        self.plugin_manager = PluginManager(self.access)
+        self.plugin_manager.load_plugins_from_directory(Path(self.settings["plugin_directory_path"]))
+        self.plugin_manager.bind_hotkeys()
+        self.plugin_manager.loaded()
 
 
     def update_menubar(self) -> None:
@@ -171,9 +174,18 @@ class Reader:
         self.root.after(self.settings["frequency"], self.periodically_execute)
 
 
+    def at_notebook_tab_changed(self, event) -> None:
+        for (function, args) in self.at_notebook_tab_changed_functions:
+            try:
+                function(event, *args)
+            except Exception as error:
+                print(f"in reader.at_notebook_tab_changed: {function.__name__}: {error.__class__.__name__}: {error}")
+
+
     def mainloop(self) -> None:
         """
         进入主循环。
         """
         self.periodically_execute()
+        self.notebook.bind("<<NotebookTabChanged>>", self.at_notebook_tab_changed)
         self.root.mainloop()

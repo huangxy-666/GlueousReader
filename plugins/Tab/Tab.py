@@ -182,7 +182,9 @@ class Tab:
         """
         这本书的总页数。
         """
-        return len(self.doc)
+        if self.doc:
+            return len(self.doc)
+        return 0
 
 
     @property
@@ -458,7 +460,6 @@ class Tab:
             self.doc.close()
         self.state = None
         self.doc = None
-        self.total_pages = 0
         self.canvas.delete("all")
         # 仅在frame被管理时修改标签标题
         try:

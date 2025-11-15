@@ -108,7 +108,7 @@ Page number calculation: 'Tab.page_no' is a 0-based index.
         self.context.update_page_turning_button = MethodType(self.update_page_turning_button, self.context)
 
         # 绑定标签页切换事件，以更新按钮显示
-        self.context.bind_notebook("<<NotebookTabChanged>>", self.context.update_page_turning_button)
+        self.context.add_at_notebook_tab_changed_function(self.context.update_page_turning_button)
 
 
     @override

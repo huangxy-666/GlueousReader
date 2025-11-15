@@ -4,7 +4,9 @@
 
 from tkinter import ttk
 from typing import override
+from types import MethodType
 
+from glueous import ReaderAccess
 from glueous_plugin import Plugin
 
 
@@ -56,10 +58,10 @@ None.
         注册快捷键。
         """
         # 当 notebook 显示的标签页改变时，将鼠标滚轮事件绑定到当前活跃的标签页，可以用鼠标滚轮控制滚动条
-        self.context.bind_notebook("<<NotebookTabChanged>>", lambda event: self._bind_mousewheel_to_current_tab())
+        self.context.add_at_notebook_tab_changed_function(self._bind_mousewheel_to_current_tab)
 
 
-    def _bind_mousewheel_to_current_tab(self) -> None:
+    def _bind_mousewheel_to_current_tab(self, event) -> None:
         """
         将鼠标滚轮事件绑定到当前标签页的画布上。
         """

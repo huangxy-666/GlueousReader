@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import tkinter as tk
 from tkinter import ttk
-from typing import Any, Dict, Iterable, List, Type, TYPE_CHECKING
+from typing import Any, Callable, Dict, Iterable, List, Type, TYPE_CHECKING
 
 if TYPE_CHECKING:
     from .Reader import Reader
@@ -147,3 +147,39 @@ class ReaderAccess:
         返回对应用数据的引用，插件可以写入该对象以实现数据持久化。
         """
         return self._reader.data
+
+
+    def add_periodically_execute_function(
+        self,
+        function: Callable,
+        args: List[Any] = None,
+    ) -> None:
+        """
+        添加一个在整个 mainloop 中周期性执行的函数。
+
+        Params:
+
+        - `function`: 要执行的函数
+        - `args`: 函数的参数
+        """
+        if args is None:
+            args = []
+        self._reader.periodically_executed_functions.append([function, args])
+
+
+    def add_at_notebook_tab_changed_function(
+        self,
+        function: Callable,
+        args: List[Any] = None,
+    ) -> None:
+        """
+        添加一个在标签页切换时执行的函数。
+
+        Params:
+
+        - `function`: 要执行的函数
+        - `args`: 函数的参数
+        """
+        if args is None:
+            args = []
+        self._reader.at_notebook_tab_changed_functions.append([function, args])
