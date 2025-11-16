@@ -424,6 +424,11 @@ class Tab:
         self.h_scroll.config(command = self.canvas.xview)
 
 
+        # 为Canvas 绑定文字选取事件
+        if hasattr(self.context, 'setup_text_selection'):
+            self.context.setup_text_selection(self)
+
+
     def open(self) -> bool:
         """
         打开文件并初始化。
