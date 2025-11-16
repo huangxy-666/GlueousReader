@@ -35,3 +35,7 @@
 - `Page.rect` ：页面矩形。
 
 动态重载已有类的已有方法可以使用 Python 标准库 `types` 提供的 `MethodType` ，请自行搜索。可以参考 `TabPlugin` 。
+
+## Future
+
+之后可以添加小部件来实现视图的切换。
