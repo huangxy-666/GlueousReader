@@ -19,4 +19,5 @@ plugin_loading_order: List[str] = [
     "VerticalScrollUpPlugin",
     "HorizontalScrollLeftPlugin",
     "HorizontalScrollRightPlugin",
+    "TextSelectionPlugin",
 ]
