@@ -69,7 +69,7 @@ class FileState:
     FileState 类，记录 Tab 类的状态，可以序列化为 JSON 对象来存储，用于在下次重新打开程序时能恢复到上次打开时的状态。
     """
 
-    DISPLAY_MODES = ("single page", "continuous", "facing", "book view")
+    DISPLAY_MODES = ("single", "continuous", "facing", "book")
 
     ROTATIONS = (0, 90, 180, 270)
 
@@ -108,7 +108,7 @@ class FileState:
         # 缩放比
         self.zoom = 1.0
 
-        # 页面旋转角度，0/90/180/270 四选一
+        # 页面旋转角度，0/90/180/270 四选一，顺时针
         self.rotation = 0
 
         # 主窗体状态码：
