@@ -66,7 +66,7 @@ None
 
         # 添加到上下文菜单
         self.context.context_menu_manager.add_context_menu_command(
-            context = "tab canvas",
+            context = self.context.Tab.CANVAS_CONTEXT_NAME,
             path = [],
             label = "复制",
             command = self.run

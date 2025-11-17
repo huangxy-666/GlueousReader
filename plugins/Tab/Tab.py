@@ -21,6 +21,10 @@ class Tab:
     Tab 类，单个文件的标签页容器，管理单电子书文件的显示和状态。
     """
 
+    #### Class Data Descriptors ####
+
+    CANVAS_CONTEXT_NAME: str = "tab canvas"
+
     #### Magic Methods ####
 
     def __init__(self, context: ReaderAccess, file_path: str = None):
@@ -591,7 +595,7 @@ This plugin must be loaded before any other plugins that manipulate tabs.
         重新绑定标签页的右键菜单。
         """
         current_tab = self.context.get_current_tab()
-        self.context.context_menu_manager.set_context("tab canvas", current_tab and current_tab.canvas)
+        self.context.context_menu_manager.set_context(Tab.CANVAS_CONTEXT_NAME, current_tab and current_tab.canvas)
 
 
     @override
