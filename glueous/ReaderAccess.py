@@ -8,6 +8,38 @@ if TYPE_CHECKING:
     from .Reader import Reader
 
 
+
+def add_menu_to_menu_structure(menu_structure: List[Dict[str, Any]], path: Iterable[str]) -> Dict[str, Any]:
+    """
+    为菜单结构 menu_structure 添加一个子菜单项，其访问路径为 `path` 。返回刚刚添加的子菜单结构。
+    """
+    # 获取菜单结构
+    current_menu: Dict[str, List[Dict[str, Any]]] = {"children": menu_structure}
+
+    # 遍历路径，逐级查找或创建菜单
+    for menu_name in path:
+        # 查找当前层级是否已存在同名菜单
+        found = False
+        for item in current_menu["children"]:
+            if (item.get("label") == menu_name) and (item.get("type") == "menu"):
+                current_menu = item
+                found = True
+                break
+
+        # 不存在则创建新菜单
+        if not found:
+            new_menu = {
+                "type": "menu",
+                "label": menu_name,
+                "tearoff": 0,
+                "children": []
+            }
+            current_menu["children"].append(new_menu)
+            current_menu = new_menu
+
+    return current_menu
+
+
 class ReaderAccess:
     """
     插件访问 Reader 的接口。
@@ -37,30 +69,7 @@ class ReaderAccess:
         """
         添加一个空的菜单，其访问路径为 `path` 。
         """
-        # 获取菜单结构
-        current_menu: Dict[str, List[Dict[str, Any]]] = {"children": self._reader.menu_structure}
-
-        # 遍历路径，逐级查找或创建菜单
-        for menu_name in path:
-            # 查找当前层级是否已存在同名菜单
-            found = False
-            for item in current_menu["children"]:
-                if (item.get("label") == menu_name) and (item.get("type") == "menu"):
-                    current_menu = item
-                    found = True
-                    break
-
-            # 不存在则创建新菜单
-            if not found:
-                new_menu = {
-                    "type": "menu",
-                    "label": menu_name,
-                    "tearoff": 0,
-                    "children": []
-                }
-                current_menu["children"].append(new_menu)
-                current_menu = new_menu
-
+        current_menu = add_menu_to_menu_structure(self._reader.menu_structure, path)
         self.update_menubar()
         return current_menu
 

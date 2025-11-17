@@ -524,7 +524,8 @@ Python extension library:
 - fitz (PyMuPDF)
 - PIL (Pillow)
 
-Other plugins: None
+Other plugins:
+- ContextMenuPlugin
 
 ## Others
 
@@ -574,7 +575,7 @@ This plugin must be loaded before any other plugins that manipulate tabs.
 
 
     @staticmethod
-    def close_tab(access: ReaderAccess, tab: Tab):
+    def close_tab(access: ReaderAccess, tab: Tab) -> None:
         """
         关闭一个标签页，返回是否成功关闭。
         """
@@ -583,6 +584,14 @@ This plugin must be loaded before any other plugins that manipulate tabs.
 
         tab.reset_tab()
         access._reader.notebook.forget(tab.frame)
+
+
+    def rebind_context_menu(self, event = None) -> None:
+        """
+        重新绑定标签页的右键菜单。
+        """
+        current_tab = self.context.get_current_tab()
+        self.context.context_menu_manager.set_context("tab canvas", current_tab and current_tab.canvas)
 
 
     @override
@@ -597,6 +606,10 @@ This plugin must be loaded before any other plugins that manipulate tabs.
         self.context.close_tab       = MethodType(self.close_tab      , self.context)
         self.context.tabs: List[Tab] = []
         self.context.Tab : type      = Tab
+
+        # 右键菜单
+        self.context.add_at_notebook_tab_changed_function(self.rebind_context_menu)
+        self.rebind_context_menu()
 
 
     @override

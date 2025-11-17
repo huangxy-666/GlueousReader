@@ -1,6 +1,3 @@
+pillow
 pymupdf
-<<<<<<< HEAD
-pillow
-=======
-pillow
->>>>>>> a930f2fcca00938a1695f22b42979cfd744fea24
+pyperclip
