@@ -22,20 +22,20 @@ graph LR
 	end
 	class 视图界面,OCR,AI Plugin
 	
-	subgraph "pymupdf.Page   (class)"
+	subgraph "<code>pymupdf.Page</code>"
 		rect(.rect)
         get_text(".get_text()")
         get_images(".get_images()")
         get_image_bbox(".get_image_bbox()")
 	end
 	
-	subgraph "ReaderAccess   (class)"
+	subgraph "<code>ReaderAccess</code>"
 		get_selected_text(".get_selected_text()")
 		data(.data)
 		get_AI_configuration(".get_AI_configuration()")
 	end
 
-	subgraph "Tab   (class)"
+	subgraph "<code>Tab</code>"
 		zoom(.zoom)
 		display_mode(.display_mode)
 		doc(.doc)
@@ -52,7 +52,7 @@ graph LR
         visible_page_positions --> render
 	end
 
-	subgraph "tkinter   (module)"
+	subgraph "<code>tkinter</code>"
 		Event(Event)
 		Tk(Tk)
 	end
