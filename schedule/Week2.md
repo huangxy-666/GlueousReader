@@ -91,7 +91,7 @@ graph LR
 	get_selected_text --> Summary
 	doc --> Summary
 	get_text --> Summary
-	get_AI_configuration -->|get| Summary
+	get_AI_configuration --> Summary
 	Summary -->|弹窗| Tk
 
 	get_text --> MindMap
