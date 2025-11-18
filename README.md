@@ -218,5 +218,9 @@ other things you would like other developers to know...
 >
 > **项目早期声明**：由于本项目才刚刚建立，还有很多不完善的地方，比如，接口可能会改，无法向后兼容等等。感谢各位的理解！
 
+<<<<<<< HEAD
 
 Please readme
+=======
+1121
+>>>>>>> a5ef4766043346d0b825df61f1b184637b5ea1e6

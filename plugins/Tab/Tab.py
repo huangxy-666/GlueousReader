@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from math import ceil
 import tkinter as tk
 from tkinter import messagebox, ttk
 import os
@@ -20,6 +21,10 @@ class Tab:
     """
     Tab 类，单个文件的标签页容器，管理单电子书文件的显示和状态。
     """
+
+    #### Class Data Descriptors ####
+
+    CANVAS_CONTEXT_NAME: str = "tab canvas"
 
     #### Magic Methods ####
 
@@ -340,31 +345,31 @@ class Tab:
         return img
 
 
-    def rotate_image(self, img: Image.Image, angle: int) -> Image.Image:
-        """
-        旋转图像，自动选择性能最优的方案，支持 0 度。
+    # def rotate_image(self, img: Image.Image, angle: int) -> Image.Image:
+    #     """
+    #     旋转图像，自动选择性能最优的方案，支持 0 度。
 
-        Params:
+    #     Params:
 
-        - `img`: 要旋转的图像。
-        - `angle`: 旋转的度数。
+    #     - `img`: 要旋转的图像。
+    #     - `angle`: 旋转的度数。
 
-        Returns:
+    #     Returns:
 
-        - 若 angle = 0，则返回原图像，否则返回原图像旋转后的副本。
-        """
-        if angle == 0:
-            return img  # 直接返回，不创建新对象
+    #     - 若 angle = 0，则返回原图像，否则返回原图像旋转后的副本。
+    #     """
+    #     if angle == 0:
+    #         return img  # 直接返回，不创建新对象
 
-        rotate_map = {
-            90: Image.ROTATE_90,
-            180: Image.ROTATE_180,
-            270: Image.ROTATE_270
-        }
-        if angle in rotate_map:
-            return img.transpose(rotate_map[angle])
+    #     rotate_map = {
+    #         90: Image.ROTATE_90,
+    #         180: Image.ROTATE_180,
+    #         270: Image.ROTATE_270
+    #     }
+    #     if angle in rotate_map:
+    #         return img.transpose(rotate_map[angle])
 
-        return img.rotate(angle, expand=True)
+    #     return img.rotate(angle, expand=True)
 
 
     def render(self):
@@ -390,7 +395,7 @@ class Tab:
 
             # 图像转换
             img = Image.frombytes("RGB", (pix.width, pix.height), pix.samples)
-            img = self.convert_color(img)
+            img = self.convert_color(img).resize((ceil(canvas_rect.width), ceil(canvas_rect.height)))
             self.tk_images.append(ImageTk.PhotoImage(image = img))
 
             # 在画布上绘制
@@ -400,6 +405,10 @@ class Tab:
                 anchor = tk.NW,
                 image  = self.tk_images[-1]
             )
+
+            # print(self.page.rect)
+            # print((self.canvas.winfo_width(), self.canvas.winfo_width()))
+
 
     def auto_render(self, func):
         """
@@ -524,7 +533,8 @@ Python extension library:
 - fitz (PyMuPDF)
 - PIL (Pillow)
 
-Other plugins: None
+Other plugins:
+- ContextMenuPlugin
 
 ## Others
 
@@ -574,7 +584,7 @@ This plugin must be loaded before any other plugins that manipulate tabs.
 
 
     @staticmethod
-    def close_tab(access: ReaderAccess, tab: Tab):
+    def close_tab(access: ReaderAccess, tab: Tab) -> None:
         """
         关闭一个标签页，返回是否成功关闭。
         """
@@ -583,6 +593,14 @@ This plugin must be loaded before any other plugins that manipulate tabs.
 
         tab.reset_tab()
         access._reader.notebook.forget(tab.frame)
+
+
+    def rebind_context_menu(self, event = None) -> None:
+        """
+        重新绑定标签页的右键菜单。
+        """
+        current_tab = self.context.get_current_tab()
+        self.context.context_menu_manager.set_context(Tab.CANVAS_CONTEXT_NAME, current_tab and current_tab.canvas)
 
 
     @override
@@ -597,6 +615,10 @@ This plugin must be loaded before any other plugins that manipulate tabs.
         self.context.close_tab       = MethodType(self.close_tab      , self.context)
         self.context.tabs: List[Tab] = []
         self.context.Tab : type      = Tab
+
+        # 右键菜单
+        self.context.add_at_notebook_tab_changed_function(self.rebind_context_menu)
+        self.rebind_context_menu()
 
 
     @override
