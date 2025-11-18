@@ -84,7 +84,7 @@ class Reader:
 
         # 创建菜单栏
         self.menubar = tk.Menu(self.root)
-        self.menu_structure: List[Dict] = []
+        self.menu_structure: List[Dict[str, Any]] = []
         """
         Like:
             [
@@ -176,10 +176,10 @@ class Reader:
 
     def at_notebook_tab_changed(self, event) -> None:
         for (function, args) in self.at_notebook_tab_changed_functions:
-            try:
-                function(event, *args)
-            except Exception as error:
-                print(f"in reader.at_notebook_tab_changed: {function.__name__}: {error.__class__.__name__}: {error}")
+            # try:
+            function(event, *args)
+            # except Exception as error:
+            #     print(f"in reader.at_notebook_tab_changed: {function.__name__}: {error.__class__.__name__}: {error}")
 
 
     def mainloop(self) -> None:

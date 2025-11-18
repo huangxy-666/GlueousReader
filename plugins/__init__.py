@@ -5,6 +5,7 @@ from typing import List
 
 # 插件加载顺序
 plugin_loading_order: List[str] = [
+    "ContextMenuPlugin",
     "TabPlugin",
     "OpenPlugin",
     "ClosePlugin",
@@ -21,6 +22,8 @@ plugin_loading_order: List[str] = [
     "HorizontalScrollRightPlugin",
     "SelectPlugin",
     "DragPlugin",
-    "TextContentMenuPlugin",
+    "CopyPlugin",
+    "TranslatePlugin",
+    "SearchPlugin",
     "HighLightPlugin",
 ]
