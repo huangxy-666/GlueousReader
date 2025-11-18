@@ -14,6 +14,12 @@
 
 为 `ReaderAccess` 添加/扩展 `get_selected_text` 方法，获得选中区域的内的文字对象，该方法接受的参数和返回值与 `pymupdf.Page.get_text` 相同。
 
+目标效果：
+
+<video src="./Select&amp;Drag.assets/Select-demo1.mp4"></video>
+
+<video src="./Select&amp;Drag.assets/Select-demo2.mp4"></video>
+
 ### DragPlugin
 
 绑定 `鼠标拖动` 事件到当前活跃 canvas 。
@@ -21,6 +27,12 @@
 当发生该事件时，现判断拖动起点是否落在某个文字的矩形框内，若是，则为划词，否则，视为拖动。划词的具体实现方案参见[划动选择的可能实现方案](划动选择的可能实现方案.md)，当接近窗口边缘时，还要滚动。
 
 为 `ReaderAccess` 添加/扩展 `get_selected_text` 方法（可参考 `TabPlugin` 和 `PageNoPlugin` ），获得选中区域的内的文字对象，该方法接受的参数和返回值与 `pymupdf.Page.get_text` 相同。
+
+目标效果：
+
+<video src="./Select&amp;Drag.assets/Drag-demo1.mp4"></video>
+
+<video src="./Select&amp;Drag.assets/Drag-demo2.mp4"></video>
 
 ## API
 
