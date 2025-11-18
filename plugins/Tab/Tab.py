@@ -406,8 +406,8 @@ class Tab:
                 image  = self.tk_images[-1]
             )
 
-            print(self.page.rect)
-            print((self.canvas.winfo_width(), self.canvas.winfo_width()))
+            # print(self.page.rect)
+            # print((self.canvas.winfo_width(), self.canvas.winfo_width()))
 
 
     def auto_render(self, func):
