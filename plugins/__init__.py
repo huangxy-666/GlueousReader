@@ -22,6 +22,8 @@ plugin_loading_order: List[str] = [
     "HorizontalScrollRightPlugin",
     "SelectPlugin",
     "DragPlugin",
-    "TextContentMenuPlugin",
+    "CopyPlugin",
+    "TranslatePlugin",
+    "SearchPlugin",
     "HighLightPlugin",
 ]
