@@ -1,3 +1,5 @@
 pillow
 pymupdf
 pyperclip
+easyocr
+torch

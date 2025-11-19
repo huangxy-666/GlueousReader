@@ -26,4 +26,6 @@ plugin_loading_order: List[str] = [
     "TranslatePlugin",
     "SearchPlugin",
     "HighLightPlugin",
+    "OCRPlugin",
+    "OCRDebugPlugin",
 ]
