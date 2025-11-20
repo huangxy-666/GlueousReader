@@ -128,7 +128,7 @@ class OCRPlugin(Plugin):
     
     def 重新识别当前文件(self) -> None:
         current_tab = self.context.get_current_tab()
-        在 ReaderAccess 中删除这个文件的OCR识别数据（如果有的话）
+        在 ReaderAccess.data 中删除这个文件的OCR识别数据（如果有的话）
         current_tab.reset()
         current_tab.open()
 ```
