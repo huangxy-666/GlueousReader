@@ -135,26 +135,7 @@ class OCRPlugin(Plugin):
 
 ## API
 
-重载 `pymupdf.Page` 类的 `get_text` 方法，在原本的返回值中再加入 OCR 识别出的结果，注意输入和输出类型与原 `get_text` 方法相同。
-
-下面是一个在已有方法上添加新功能的示例：
-
-```python
-import fitz
-
-# 创建 Page 对象
-doc = fitz.open(r"path/to/a/pdf")
-page = doc[0]
-page.get_text()
-
-# 重载 Page 类已有的 get_text 方法
-origin_get_text = fitz.Page.get_text
-def new_get_text(*args, **kwargs):
-    print("This is a modified method.")
-    return origin_get_text(*args, **kwargs)
-
-fitz.Page.get_text = new_get_text
-```
+重载 `Tab` 类的 `open` 方法，在原有功能的基础上，再导入过往的 OCR 数据。详见 [Implement](#Implement) 部分。
 
 ## Something Useful
 
