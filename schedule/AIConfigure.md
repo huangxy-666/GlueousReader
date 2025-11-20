@@ -1,6 +1,6 @@
-# AI
+# AIConfigure
 
-你需要完成 `AIPlugin` 插件。这是为其他 AI 功能提供配置参数的基础插件。
+你需要完成 `AIConfigurePlugin` 插件。这是为其他 AI 功能提供配置参数的基础插件。
 
 ## Function
 
