@@ -158,7 +158,7 @@ fitz.Page.get_text = new_get_text
 
 ## Something Useful
 
-- `ReaderAccess.data` ：返回对应用数据的引用，插件可以写入该对象以实现数据持久化。（只能写入可JSON化的对象）
+- `ReaderAccess.data` ：返回对应用数据的引用，插件可以写入该对象以实现数据持久化。（只能写入可JSON化的对象）（参见 `Tab.__init__`）
 - `Tab.doc` ：`fitz.Document` 对象，可视为 `Sequence[Page]` 和 `Iterable[Page]` 。
 - `Tab.visible_page_positions` 
 - `Tab.selectable_page_positions` 
