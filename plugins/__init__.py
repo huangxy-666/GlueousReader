@@ -42,5 +42,6 @@ plugin_loading_order: List[str] = [
     "OCRPlugin",
     "OCRDebugPlugin",
     "AIConfigurePlugin",
+    "SummaryPlugin",
     "MindMapPlugin",
 ]
