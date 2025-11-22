@@ -3,3 +3,4 @@ pymupdf
 pyperclip
 easyocr
 torch
+openai
