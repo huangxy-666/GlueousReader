@@ -31,7 +31,6 @@ def check_markmap() -> bool:
     """
     检查 Markmap 是否已正确安装。
     """
-    print("Markmap version: ", end = "")
     try:
         subprocess.run(['markmap.cmd', '--version'])
     except FileNotFoundError:
@@ -236,12 +235,12 @@ For large documents, the text will be compressed using AI to fit within token li
         """
         return f"""
 请为以下文档内容生成一个思维导图。要求：
-1. 使用 Markdown 格式
+1. 使用能够被 Markmap 转换的 Markdown 格式
 2. 仅输出 Markdown 内容，不要有附加的内容
 3. 最多 {depth} 层结构
 4. 使用原文的语言
 5. 突出文档的核心要点和逻辑关系
-6. 保持简洁明了
+6. 简洁明了
 
 文档内容：
 
@@ -302,7 +301,7 @@ For large documents, the text will be compressed using AI to fit within token li
 
             # 如果文本过长，先进行压缩
             label.config(text = "正在压缩文本...")
-            doc_text = compress_text(doc_texts, ai_config, 96, label)
+            doc_text = compress_text(doc_texts, ai_config, 128, label)
 
             # 调用AI API
             label.config(text = "正在生成思维导图的结构...")

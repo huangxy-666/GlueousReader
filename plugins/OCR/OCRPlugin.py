@@ -574,22 +574,22 @@ Other plugins:
             command=self.reocr_current_page
         )
         
-        # # 重载 Page.get_text 方法
-        # if self.original_get_text is None:
-        #     self.original_get_text = fitz.Page.get_text
+        # 重载 Page.get_text 方法
+        if self.original_get_text is None:
+            self.original_get_text = fitz.Page.get_text
             
-        #     # 创建闭包保存 self 引用
-        #     plugin_self = self
+            # 创建闭包保存 self 引用
+            plugin_self = self
             
-        #     def new_get_text(page_instance, *args, **kwargs):
-        #         return plugin_self.modified_get_text(
-        #             plugin_self.original_get_text,
-        #             page_instance,
-        #             *args,
-        #             **kwargs
-        #         )
+            def new_get_text(page_instance, *args, **kwargs):
+                return plugin_self.modified_get_text(
+                    plugin_self.original_get_text,
+                    page_instance,
+                    *args,
+                    **kwargs
+                )
             
-        #     fitz.Page.get_text = new_get_text
+            fitz.Page.get_text = new_get_text
 
 
     @override
